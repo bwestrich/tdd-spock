@@ -3,6 +3,7 @@ package mcwest
 class SmallerWhereSpec {
 
     def 'large where clause is hard to manage'() {
+
         given:
         int i;
 

@@ -2,12 +2,16 @@ package mcwest
 
 
 class NamingTestsSpec {
+
     // good
     def 'strings are converted to lower case and trimmed'() {
+
         given:
-        ClassUnderTest underTest = new ClassUnderTest()
+        TheClassUnderTest underTest = new TheClassUnderTest()
+
         when:
         def actualString = underTest.convertString('Hello ')
+
         then:
         actualString == 'hello'
     }
@@ -21,7 +25,10 @@ class NamingTestsSpec {
         // this naming convention is less readable since can't use whitespace and puncuation
     }
 
-    class ClassUnderTest {
+    class TheClassUnderTest {
 
+        String convertString(String s) {
+            s.toLowerCase().trim()
+        }
     }
 }

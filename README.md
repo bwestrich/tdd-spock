@@ -1,7 +1,7 @@
 tdd-spock
 =========
 
-Test Driven Design / Development examples written in Spock 
+Test Driven Design / Development examples in Spock 
 
 Test first
   benefit of writing tests first: focus on the external api
