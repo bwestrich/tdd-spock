@@ -7,7 +7,7 @@ class UsingGivenNotSetupSpec extends Specification {
     // good
     def 'strings are converted to lower case and trimmed'() {
         given:
-        TheClassUnderTest underTest = new TheClassUnderTest()
+        ClassUnderTest underTest = new ClassUnderTest()
 
         when:
         def actualString = underTest.convertString('Hello ')
@@ -20,7 +20,7 @@ class UsingGivenNotSetupSpec extends Specification {
     def 'strings are converted to lower case and trimmed, uses setup'() {
 
         setup:
-        TheClassUnderTest underTest = new TheClassUnderTest()
+        ClassUnderTest underTest = new ClassUnderTest()
 
         when:
         def actualString = underTest.convertString('Hello ')
@@ -29,8 +29,7 @@ class UsingGivenNotSetupSpec extends Specification {
         actualString == 'hello'
     }
 
-    class TheClassUnderTest {
-
+    class ClassUnderTest {
         String convertString(String s) {
             s.toLowerCase().trim()
         }

@@ -7,7 +7,7 @@ class NamingTestsSpec {
     def 'strings are converted to lower case and trimmed'() {
 
         given:
-        TheClassUnderTest underTest = new TheClassUnderTest()
+        ClassUnderTest underTest = new ClassUnderTest()
 
         when:
         def actualString = underTest.convertString('Hello ')
@@ -25,8 +25,7 @@ class NamingTestsSpec {
         // this naming convention is less readable since can't use whitespace and puncuation
     }
 
-    class TheClassUnderTest {
-
+    class ClassUnderTest {
         String convertString(String s) {
             s.toLowerCase().trim()
         }
