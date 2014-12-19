@@ -1,9 +1,11 @@
-package mcwest.learnspock
+package mcwest
 
 import spock.lang.Specification
 
-class WhereSpec extends Specification {
+class ExpectForSimpleSpec extends Specification {
     def "length of Spock and his friends' names"() {
+
+        // for simple tests without a given/when/then flow, use expect:
         expect:
         name.size() == length
 

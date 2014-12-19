@@ -5,7 +5,6 @@ class NamingTestsSpec {
 
     // good
     def 'strings are converted to lower case and trimmed'() {
-
         given:
         ClassUnderTest underTest = new ClassUnderTest()
 

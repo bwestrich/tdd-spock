@@ -16,9 +16,8 @@ class UsingGivenNotSetupSpec extends Specification {
         actualString == 'hello'
     }
 
-    // bad, uses setup
+    // bad, uses setup, less intuitive
     def 'strings are converted to lower case and trimmed, uses setup'() {
-
         setup:
         ClassUnderTest underTest = new ClassUnderTest()
 
