@@ -11,22 +11,27 @@ Know what you’re testing
 
 Don’t whitebox test
   General (Java) intro ref: https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing
-  use non-strict mock matching where possible [todo-write spock example]
 
 Use Behavior oriented spock syntax: 
-  given/when/then, not setup [todo-write spock example]
-  When using where clause, put expectations at end of where clause
+  use given:, not when: [todo-write spock example]
+  When using where clause, put expectations at end of where clause [todo-write spock example]
 
-Move supporting mocks to ‘given’ from ’then' [todo-write spock example]
-  easier to read tests
-  easier to see what test is testing 
+Put mocks that support the test but don't test that which is supposed to be tested to the ‘given’ section [todo-write spock example]
+  the 'then:' section should only contain assertions related to the functionality we intend to test
+  mocking in the 'given' section should not verify number of calls, method parameters, etc., unless needed to support the test
+  benefits: easier to read tests, easier to focus on what test is testing, tests are more resilient to refactoring of class under test 
 
-Avoid test spies [todo-write spock example]
-  here is example of using them
-  often they are a smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities 
+Avoid test spies
+  e.g. mcwest.learnspock.SpySpec
+  though sometimes needed, often spies are a smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities 
 
 Write readable tests
- Write test methods that say what the software is expected to do [todo-write spock example]
+ Write test methods that say what the software is expected to do (e.g. mcwest.NamingTestsSpec)
  Don't describe how you're testing 
  Avoid wide where clauses, look for opportunities to separate them into smaller separate test methods 
 
+TODO: finish SmallerWhereSpec
+TODO: finish rest of todo's above 
+TODO: use 'asdfasdf' strings after colons
+TODO: look at hamlet tests for more ideas, refer to his too
+TODO: use comment as first field to explain complex where clauses 
