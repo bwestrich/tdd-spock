@@ -42,8 +42,7 @@ Spock uses different sections for your test code (given/when/then/where...). Usi
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
 ##Other concepts (no examples for these yet)
-* TODO: example of using a closure with a mock to troubleshoot why the calling args of the class under test don't match those of the mock
 * TODO: when using where tables, put expected values in the rightmost column(s) of the table
-* TODO: use static or @Shared variables to centralize variable initializations 
+* TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
 
