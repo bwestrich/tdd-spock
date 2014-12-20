@@ -18,7 +18,7 @@ Here is a great discussion of the topic of knowing what you're testing. It discu
 Don't test the internal implementation of your classes, only test the external API. For more info, see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
 ##Use behavior oriented spock syntax
-  Use given:, not when: e.g. `mcwest.UsingGivenNotSetup`
+  Use given:, not when: e.g. `mcwest.UsingGivenNotSetupSpec`
  
 ##Use test sections appropriately
 * Put support mocks (that only support the test) in the ‘given’ section (e.g. `mcwest.SeparateExpectationFromScaffoldingSpec`), not in the then: section. 
