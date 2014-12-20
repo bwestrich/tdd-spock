@@ -5,8 +5,8 @@
 The below guidelines (and their related code examples) will help you use Spock for Test Driven Development (TDD). Each code example is prefaced with the package name (e.g. `mcwest....`) For more on TDD, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 ##Test the right thing
-Here is a great discussion of the topic of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, and how you should name your tests. All examples are in Spock. 
-
+* In short, only test the functionality that the code under test provides to its consumers. Do not test the internal implementation of the class. 
+* Here is a great discussion of the topic of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, and how you should name your tests. All examples are in Spock. 
 * http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
 
 ##Name your methods well
@@ -17,7 +17,7 @@ Here is a great discussion of the topic of testing the right thing. It discusses
 * **Do not use a groovy method name**, use a text based method comment (see code examples). 
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
-##Name your test classes after your classes under test
+##Name your test classes based on your classes under test
 The name of your software test class should be {ClassUnderTest}Spec to allow for relating tests to the class under test.
 
 ##Don’t whitebox test
@@ -26,7 +26,7 @@ Don't test the internal implementation of your classes, only test the external A
 ##Use test sections appropriately
 Spock uses different sections for your test code (given/when/then/where...). Using these sections correctly can greatly improve the readability and value of your tests.  
 
-* Put support mocks (that only support the test) in the ‘given’ section (e.g. `mcwest.SeparateExpectationFromScaffoldingSpec`), not in the then: section. 
+* Put support mocks (that only support the test, but whose expectations don't help test the right thing) in the ‘given’ section (e.g. `mcwest.SeparateExpectationFromScaffoldingSpec`), not in the then: section. 
 * The 'then:' section should only contain assertions related to the functionality we intend to test. 
 * Mocking in the 'given' section should not verify number of calls, method parameters, etc., unless needed to support the test.
 * Benefits include easier to read tests, better focus on what the test is supposed to test, and tests that are more resilient to refactoring of the class under test. And (per Martin Fowler) easier refactoring is one of the main reasons why we write unit tests. 
@@ -34,7 +34,7 @@ Spock uses different sections for your test code (given/when/then/where...). Usi
 ##Use behavior-oriented test section names
   Use given:, not when: e.g. `mcwest.UsingGivenNotSetupSpec`
  
-##Limit size of 'where' tables  
+##Limit size of where tables  
  Avoid "wide" where tables and look for opportunities to break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
 
 ##Use spies cautiously
