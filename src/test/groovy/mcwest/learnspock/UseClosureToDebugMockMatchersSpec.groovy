@@ -27,10 +27,10 @@ class UseClosureToDebugMockMatchersSpec extends Specification {
             // leading to a null pointer exception
             mockDependency.convertString('Converted') >> "converted"
         } else {
+            // this mock does match the param value, test passes
             mockDependency.convertString('Converted ') >> "converted"
         }
         if (useClosureToDebug) {
-            // this mock does match the param value, test passes
             mockDependency.convertString({ inputString ->
                 println "'${inputString}'" // show what was actually passed into the mock.
                 // This can be used to troubleshoot invalid mock setups, such as the above line that was commented out.
