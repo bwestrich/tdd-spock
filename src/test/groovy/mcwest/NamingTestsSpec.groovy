@@ -19,7 +19,7 @@ class NamingTestsSpec {
     def 'convert strings to lower case and trim them'() {
     }
 
-    // bad, uses method name,l which is less readable
+    // bad, uses method name, which is less readable
     def usesActualMethodName() {
         // this naming convention is less readable since can't use whitespace and puncuation
     }
