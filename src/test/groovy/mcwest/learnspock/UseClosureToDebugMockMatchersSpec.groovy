@@ -33,8 +33,8 @@ class UseClosureToDebugMockMatchersSpec extends Specification {
         if (useClosureToDebug) {
             mockDependency.convertString({ inputString ->
                 println "'${inputString}'" // show what was actually passed into the mock.
-                // This can be used to troubleshoot invalid mock setups, such as the above line that was commented out.
-                return true // must return true, or matcher will not match
+                // This can be used to troubleshoot invalid mock setups, such as the above mock that was causing a npe.
+                return true // Closure must return true, which forces matcher to match.
             }) >> "converted"
         }
 
