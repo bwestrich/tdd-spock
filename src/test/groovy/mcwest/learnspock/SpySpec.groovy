@@ -2,6 +2,9 @@ package mcwest.learnspock
 
 import spock.lang.Specification
 
+/*
+  My colleague Kevin Beatty and I coded this while pair-programming.
+ */
 class SpySpec extends Specification {
 
     def 'Spock spies can be used to mock out selective methods of the class under test'() {
