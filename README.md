@@ -11,10 +11,10 @@ Here is a great discussion of the topic of testing the right thing. It discusses
 
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
-* Make the method name as short as possible while capturing the essence of the tested functionality. 
-* Choose a method name that states what the code under test should do. Do not describe how you are testing ('returns a boolean' is better than 'verify we return a boolean'). 
-* Do not use the word 'should' in the method name, this is self-evident and makes your test method names more wordy ('calculates price based on discount' is better than 'should calculate price based on discount').
-* Do not use a groovy method name, use a text based method comment (see code examples). 
+* Make the method name as **short** as possible while capturing the essence of the tested functionality. 
+* Choose a method name that states **what** the code under test should do,  **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
+* **Do not use 'should', 'test', or 'verify'** in the method name, these words are self-evident and make test method names more wordy ('calculates price based on discount' is better than 'should calculate price based on discount').
+* **Do not use a groovy method name**, use a text based method comment (see code examples). 
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Name your test classes after your classes under test

@@ -4,9 +4,9 @@ import spock.lang.Specification
 
 class UsingGivenNotSetupSpec extends Specification {
 
-    // good
-    def 'strings are converted to lower case and trimmed'() {
-        given:
+    // bad, uses setup, less intuitive
+    def 'strings are converted to lower case and trimmed, v1'() {
+        setup:
         ClassUnderTest underTest = new ClassUnderTest()
 
         when:
@@ -16,9 +16,9 @@ class UsingGivenNotSetupSpec extends Specification {
         actualString == 'hello'
     }
 
-    // bad, uses setup, less intuitive
-    def 'strings are converted to lower case and trimmed, uses setup'() {
-        setup:
+    // good, uses given instead of setup
+    def 'strings are converted to lower case and trimmed, v2'() {
+        given:
         ClassUnderTest underTest = new ClassUnderTest()
 
         when:

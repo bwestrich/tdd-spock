@@ -5,9 +5,9 @@ import spock.lang.Unroll
 
 class SmallerWhereSpec extends Specification {
 
-    // bad
+    // bad, large where clause is hard to manage
     @Unroll
-    def 'large where clause is hard to manage: #comment'() {
+    def 'sizes can be compared and added: #comment'() {
         given:
         ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -35,9 +35,9 @@ class SmallerWhereSpec extends Specification {
         'two and one'    | [y: 3, z: 4] | [1]      | false            | 3
     }
 
-    // better
+    // better (part 1 of 2)
     @Unroll
-    def 'smaller where clause is easier to manage (sameSize)'() {
+    def 'size can be compared for different types of collections'() {
         given:
         ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -60,9 +60,9 @@ class SmallerWhereSpec extends Specification {
         [y: 2]  | [1]      | true
     }
 
-    // better
+    // better (part 2 of 2)
     @Unroll
-    def 'smaller where clause is easier to manage (sumOfSizes)'() {
+    def 'sizes are added, using zero for nulls'() {
         given:
         ClassUnderTest classUnderTest = new ClassUnderTest()
 

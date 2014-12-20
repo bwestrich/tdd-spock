@@ -19,7 +19,19 @@ class NamingTestsSpec {
     def 'convert strings to lower case and trim them'() {
     }
 
-    // bad, uses method name, which is less readable
+    // bad, uses 'verify' which is verbose
+    def 'verify we can convert strings to lower case and trim them'() {
+    }
+
+    // bad, uses 'test' which is verbose
+    def 'test we can convert strings to lower case and trim them'() {
+    }
+
+    // bad, uses 'should' which is verbose
+    def 'should convert strings to lower case and trim them'() {
+    }
+
+    // bad, uses groovy method name, which is less readable
     def usesActualMethodName() {
         // this naming convention is less readable since can't use whitespace and puncuation
     }

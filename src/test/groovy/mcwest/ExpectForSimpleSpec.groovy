@@ -3,7 +3,7 @@ package mcwest
 import spock.lang.Specification
 
 class ExpectForSimpleSpec extends Specification {
-    def "length of Spock and his friends' names"() {
+    def "name lengths are correctly calculated"() {
 
         // for simple tests without a given/when/then flow, use expect:
         expect:
