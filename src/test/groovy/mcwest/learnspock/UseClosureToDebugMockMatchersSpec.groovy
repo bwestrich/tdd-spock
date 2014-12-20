@@ -11,7 +11,7 @@ This technique was first suggested to me by my colleague Dave Hoffman.
 
 class UseClosureToDebugMockMatchersSpec extends Specification {
 
-    def 'put scaffold mocks into given, testing mocks into then'() {
+    def 'closures can be used to debug mocks whose parameter values do not match'() {
 
         // suggested order of use:
         // 1. failTest true, useClosureToDebug false  // test fails with null pointer exception
@@ -30,6 +30,9 @@ class UseClosureToDebugMockMatchersSpec extends Specification {
         } else {
             // this mock does match the param value, test passes
             mockDependency.convertString('Converted ') >> "converted"
+
+            // this mock also will match, but doesn't give us insight into why the mismatch is happening
+            //mockDependency.convertString(_) >> "converted"
         }
         if (useClosureToDebug) {
             mockDependency.convertString({ inputString ->
