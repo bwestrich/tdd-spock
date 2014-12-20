@@ -3,7 +3,7 @@
 
 The below guidelines (and their related code examples) will help you use Spock for Test Driven Development (TDD). Each code example is prefaced with the package name (e.g. `mcwest....`) For more on TDD, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
-##Know what you’re testing
+##Test the right thing
 Here is a great discussion of the topic of knowing what you're testing. It discusses when to write a test, when you shouldn’t write a test, and how you should name your tests. All examples are in Spock. 
 
 * http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
@@ -17,16 +17,18 @@ Here is a great discussion of the topic of knowing what you're testing. It discu
 ##Don’t whitebox test
 Don't test the internal implementation of your classes, only test the external API. For more info, see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
-##Use behavior oriented spock syntax
-  Use given:, not when: e.g. `mcwest.UsingGivenNotSetupSpec`
- 
 ##Use test sections appropriately
+Spock has sections for your test code (given/when/then/where...). Using these correctly can greatly improve the readability and value of your tests. 
+
 * Put support mocks (that only support the test) in the ‘given’ section (e.g. `mcwest.SeparateExpectationFromScaffoldingSpec`), not in the then: section. 
 * The 'then:' section should only contain assertions related to the functionality we intend to test. 
 * Mocking in the 'given' section should not verify number of calls, method parameters, etc., unless needed to support the test.
 * Benefits include easier to read tests, better focus on what the test is supposed to test, tests more resilient to refactoring of the class under test. 
 
-##Avoid test spies
+##Use behavior oriented syntax
+  Use given:, not when: e.g. `mcwest.UsingGivenNotSetupSpec`
+ 
+##Use spies cautiously
 * Spock supports use of test spies to  mock selected methods of the 'class under test' (e.g. `mcwest.learnspock.SpySpec`). 
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
