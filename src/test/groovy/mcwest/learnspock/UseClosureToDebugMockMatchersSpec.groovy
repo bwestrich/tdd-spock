@@ -6,6 +6,7 @@ import spock.lang.Specification
 This class shows how to use a closure to debug why a mock is not matching.
 The closure prints out the argument values being passed to the mock,
 which you can then compare to the values expected by the mock.
+This technique was first suggested to me by my colleague Dave Hoffman.
  */
 
 class UseClosureToDebugMockMatchersSpec extends Specification {
