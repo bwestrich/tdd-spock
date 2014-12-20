@@ -7,8 +7,9 @@ For more on TDD, including code examples and a Java/IntelliJ/Eclipse TDD cribshe
 
 ##Test the right thing
 * In short, only test the functionality that the code under test provides to its consumers. Do not test the internal implementation of the class. 
-* Here is a great discussion of the topic of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, and how you should name your tests. All examples are in Spock. 
-* http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
+* Here is a great discussion of the topic of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, 
+and how you should name your tests. All examples are in Spock. 
+http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
 
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
