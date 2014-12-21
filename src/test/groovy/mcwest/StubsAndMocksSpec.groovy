@@ -2,82 +2,73 @@ package mcwest
 
 import spock.lang.Specification
 
-// TODO: Add in a non-scaffolding mock
-// TODO: remove the check for string content expectation from tests, this is only  cache test?
-
 class StubsAndMocksSpec extends Specification {
 
     String dataId = "id1"
-    String rawData = "    raw Data  "
-    String expectedConvertedData = "Converted: data"
+    String rawData = "    raw data  "
+    String expectedTransformedData = "data"
+    private DataService dataServiceStub
+    private LoggingService logServiceMock
+    private DataController controller
 
-    // bad, mocks and stubs are in then
-    def 'string is processed and cached, v1'() {
-        given:
-        DataService mockDependency = Mock(DataService)
-        DataController controller = new DataController(service: mockDependency)
-
-        when:
-        def actualString = controller.retrieve(dataId)
-
-        then:
-        mockDependency.retrieveData(dataId) >> rawData
-        actualString == expectedConvertedData
+    def setup() {
+        dataServiceStub = Mock(DataService)
+        logServiceMock = Mock(LoggingService)
+        controller = new DataController(dataService: this.dataServiceStub, logService: this.logServiceMock)
     }
 
-    // bad, scaffold mocks have expectations
-    def 'string is processed and cached, v2'() {
+    // dataService is a stub since calls to it do not need to be verified to test that data is correctly transformed
+    def 'data correctly transformed'() {
         given:
-        DataService mockDependency = Mock(DataService)
-        DataController controller = new DataController(service: mockDependency)
-        1 * mockDependency.retrieveData(dataId) >> rawData
+        dataServiceStub.retrieveData(dataId) >> rawData
 
         when:
-        def actualString = controller.retrieve(dataId)
+        def actualData = controller.getTransformedData(dataId)
 
         then:
-        actualString == expectedConvertedData
+        actualData == expectedTransformedData
     }
 
-    // good, scaffold mocks are in given, and have no expectations (unless needed for test)
-    def 'string is processed and cached, v3'() {
+    // logService is a mock, since calls to it must be verified to test that we are logging,
+    // dataService is still a stub.
+    def 'retrieval is logged'() {
         given:
-        DataService mockDependency = Mock(DataService)
-        DataController controller = new DataController(service: mockDependency)
-        mockDependency.retrieveData(dataId) >> rawData
+        dataServiceStub.retrieveData(dataId) >> rawData
 
         when:
-        def actualString = controller.retrieve(dataId)
+        controller.getTransformedData(dataId)
 
         then:
-        actualString == expectedConvertedData
+        1 * logServiceMock.log(dataId, rawData)
     }
 
     class DataController {
-        DataService service
-        Map cache  // TODO: inject, then mock as a mock needed for the test
+        DataService dataService
+        LoggingService logService
 
-        String retrieve(String s) {
-            String retrievedRawData = service.retrieveData(s)
-            retrievedRawData = retrievedRawData.toLowerCase().trim()
-            retrievedRawData = retrievedRawData.replace("raw", "")
-            return "Converted: " + retrievedRawData.trim()
+        String getTransformedData(String id) {
+            String retrievedRawData = dataService.retrieveData(id)
+            logService.log(id, retrievedRawData)
+            String transformedData = retrievedRawData.replace("raw", "").trim()
+            transformedData
         }
 
     }
+
+    // the following classes are included here for demo purposes.
+    // in real coding, they would have their own class file and spec file.
 
     class DataService {
-        String retrieveData(String s) {
-            // retrieve data, e.g. by calling a web service
-            throw new RuntimeException("service not yet implemented")
+        String retrieveData(String id) {
+            // getTransformedData data, e.g. by calling a web dataService
+            throw new RuntimeException("retrieveData not yet implemented")
         }
     }
 
-    class Transformer {
-        String transformData(String s) {
-            throw new RuntimeException("transformer not yet implemented")
+    class LoggingService {
+        void log(Object key, Object value) {
+            throw new RuntimeException("log not yet implemented")
         }
     }
-
 
 }
