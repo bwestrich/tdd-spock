@@ -33,9 +33,11 @@ Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which 
 ##Use different test double types appropriately
 Spock uses different sections for your test code (given/when/then/where...). Using these sections correctly can greatly improve the readability and value of your tests. 
 
-* Put **stubs** in the **‘given:’** section (e.g. `mcwest.StubsAndMocksSpec`). This section should not verify number of calls, method parameters, etc. These verifications make your tests harder to read and less resilient to refactoring 
+* Put **stubs** in the **‘given:’** section. This section should not verify number of calls, method parameters, etc. These verifications make your tests harder to read and less resilient to refactoring 
 
 * Put **mocks** in the **'then:'** section.  
+
+See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
  
 ##Use behavior-oriented test section names
   Use given:, not setup: e.g. `mcwest.UsingGivenNotSetupSpec`
