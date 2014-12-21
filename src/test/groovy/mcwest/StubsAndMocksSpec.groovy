@@ -37,8 +37,7 @@ class StubsAndMocksSpec extends Specification {
         controller.getTransformedData(dataId)
 
         then:
-        // logService is a mock, since calls to it must be verified to test that we are logging,
-        // dataService is still a stub.
+        // logService is a mock, since calls to it must be verified to test that we are logging
         1 * logServiceMock.log(dataId, rawData)
     }
 
