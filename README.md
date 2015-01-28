@@ -2,7 +2,8 @@
 
 *"If you want to refactor, the essential precondition is having solid tests.”* - Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
-The below guidelines (and their related code examples) will help you use Spock for Test Driven Development (TDD). Each code example is prefaced with the package name (e.g. `mcwest....`) 
+The below guidelines (and their related code examples) will help you effectively use Spock for Test Driven Development (TDD). These guidelines can help you develop tests that will be an "Asset instead of an Afterthought". 
+Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`) 
 For more on TDD, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 ##Test the right thing
@@ -23,7 +24,9 @@ http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for �
 The name of your software test class should be {ClassUnderTest}Spec to allow for relating tests to the SUT.
 
 ##Don’t whitebox test
-Don't test the internal implementation of SUT, only test the external API. For more info, see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
+Don't test the internal implementation of SUT, only test the external API.
+* See the next points related to how to best use different types of test doubles in your Spock tests. 
+* Also see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
 ##Remember key differences between types of test doubles
 * Stubs: provide canned answers to calls (to other objects) made during a test. They allow you to write tests on an object without having to implement the objects it calls. There is no expectation on which stub methods will be called during a test. 
