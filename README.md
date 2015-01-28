@@ -2,8 +2,7 @@
 
 *"If you want to refactor, the essential precondition is having solid tests.”* - Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
-The below guidelines (and their related code examples) will help you effectively use Spock for Test Driven Development (TDD). These guidelines can help you develop tests that will be an "Asset instead of an Afterthought". 
-Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`) 
+The below guidelines (and their related code examples) can help you effectively use Spock for Test Driven Development (TDD). Such tests can be an "Asset instead of an Afterthought". Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
 For more on TDD, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 ##Test the right thing
