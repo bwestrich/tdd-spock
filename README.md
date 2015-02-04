@@ -54,6 +54,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 ##Other concepts (no examples for these yet)
 * TODO: when using where tables, put expected values in the rightmost column(s) of the table
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
+* TODO: use thrown/notThrown to verify exception behavior
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
 
 ##References
