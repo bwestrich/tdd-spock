@@ -19,8 +19,15 @@ class StubsAndMocksSpec extends Specification {
 
     def 'data is correctly transformed'() {
         given:
-        // dataService is a stub since calls to it do not need to be verified to test that data is correctly transformed
+        // DataService is a stub since calls to it do not need to be verified to test that data is correctly transformed.
+        // Note that we do not specify the number of times the method must be called. 
         dataServiceStub.retrieveData(dataId) >> rawData
+        
+        // Another tools for writing 'lenient' stubs are: 
+        //   (_, _, _, ...) to stub a method call based only on the number of arguments passed to it
+        //        i.e. myMethod(_, _) matches myMethod(a, b) or myMethod(a, c)
+        //   (*_) to stub a method call regardless of the arguments passed to it, e.g.  
+        //        i.e. myMethod(*_) matches myMethod(), myMethod(a), myMethod(a, b), .....
 
         when:
         def actualData = controller.getTransformedData(dataId)
