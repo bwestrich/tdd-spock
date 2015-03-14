@@ -60,5 +60,13 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
 
 ##References
+
+### Testing
+
 * http://www.martinfowler.com/bliki/TestDouble.html
 * http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html
+
+### Spock
+
+* http://sett.ociweb.com/sett/settFeb2012.html
+
