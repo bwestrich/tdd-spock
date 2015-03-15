@@ -7,9 +7,9 @@ class StubsAndMocksSpec extends Specification {
     String dataId = "id1"
     String rawData = "    raw data  "
     String expectedTransformedData = "data"
-    private DataService dataServiceStub
-    private LoggingService logServiceMock
-    private DataController controller
+    DataService dataServiceStub
+    LoggingService logServiceMock
+    DataController controller
 
     def setup() {
         dataServiceStub = Mock(DataService)
