@@ -68,9 +68,11 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 
 ### Spock
 
-#### Guide
+#### Guides
+* https://leanpub.com/spockframeworknotebook/read
 * http://sett.ociweb.com/sett/settFeb2012.html
 
-### Cheatsheet
-* http://www.objectpartners.com/2014/04/08/spock-mock-cheatsheet/
+#### Cheatsheet
+* https://github.com/craigatk/spock-mock-cheatsheet
+
 
