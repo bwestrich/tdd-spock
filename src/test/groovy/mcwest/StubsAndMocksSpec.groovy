@@ -23,7 +23,7 @@ class StubsAndMocksSpec extends Specification {
         // Note that we do not specify the number of times the method must be called. 
         dataServiceStub.retrieveData(dataId) >> rawData
         
-        // Another tools for writing 'lenient' stubs are: 
+        // Other tools for writing 'lenient' stubs are:
         //   (_, _, _, ...) to stub a method call based only on the number of arguments passed to it
         //        i.e. myMethod(_, _) matches myMethod(a, b) or myMethod(a, c)
         //   (*_) to stub a method call regardless of the arguments passed to it, e.g.  
