@@ -1,0 +1,28 @@
+apply plugin: 'idea'
+apply plugin: "groovy"
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.3.7"
+    testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+
+    // optional dependencies for using Spock
+    testCompile "org.hamcrest:hamcrest-core:1.2" // only necessary if Hamcrest matchers are used
+    testRuntime "cglib:cglib-nodep:2.2"     // enables mocking of classes (in addition to interfaces)
+    testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
+}
+
+// creates bootstrap files (gradlew etc.) for Gradle build (not required for using Spock)
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.1"
+}
