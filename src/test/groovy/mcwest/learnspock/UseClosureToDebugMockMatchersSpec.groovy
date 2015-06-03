@@ -42,6 +42,12 @@ class UseClosureToDebugMockMatchersSpec extends Specification {
             }) >> "converted"
         }
 
+        // note: if your mocked method has more than one parameter, use a separate closure for each parameter,
+        // vs one parameter with multiple parameters
+        //    do this: ({ p1 -> ...}, {p2 -> ...}) >> ...
+        //   not this: ({ p1, p2 -> ...}) >> ...
+
+
         when:
         def actualString = underTest.convertString('Converted ')
 
