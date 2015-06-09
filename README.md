@@ -54,10 +54,13 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
 ##Other concepts (no examples for these yet)
-* TODO: when using where tables, put expected values in the rightmost column(s) of the table
+* TODO: when using where tables, for readability put expected values in the rightmost column(s) of the table
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
 * TODO: use thrown/notThrown to verify exception behavior
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
+* TODO: use the Spring 'MockMvc' testing framework to write (Spock) controller tests out of container and then (by inheriting them) also run them in container.
+    note: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
+    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
 
 ##References
 
@@ -71,6 +74,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 #### Guides
 * https://leanpub.com/spockframeworknotebook/read
 * http://sett.ociweb.com/sett/settFeb2012.html
+* http://odinodinblog.herokuapp.com/blog/2012/11/12/spock-and-spring 
 
 #### Cheatsheet
 * https://github.com/craigatk/spock-mock-cheatsheet
