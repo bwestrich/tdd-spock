@@ -8,10 +8,19 @@ The below guidelines (and their related code examples) can help you effectively 
 For more on TDD, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 ##Test the right thing
-* In short, only test functionality that the system under test (SUT) provides to its consumers. Do not test the internal implementation of the class. 
+* Only test functionality that the system under test (SUT) provides to its consumers. Do not test the internal implementation of the class. 
 * Here is a great discussion of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, 
 and how you should name your tests. All examples are in Spock. 
 http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
+
+##Use tests to specify
+* Use the test to specify what the SUT does, particularly edge cases.
+* For code example, see `mcwest.`
+
+##Use behavior driven syntax 
+* Spock allows many different syntaxes for tests.
+* For all but the simplest tests, use the given/when/then syntax 
+   (reason: more readable, enforces correct operator use such as use of comparison in 'then')
 
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
@@ -44,7 +53,7 @@ Spock uses different sections for your test code (given/when/then/where...). Usi
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
  
 ##Use behavior-oriented test section names
-  Use given:, not setup: e.g. `mcwest.UsingGivenNotSetupSpec`
+  Use given:, not setup: e.g. `mcwest.UseGivenNotSetupSpec`
  
 ##Limit size of where tables  
  Break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
@@ -58,6 +67,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
 * TODO: use thrown/notThrown to verify exception behavior
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
+* TODO: use IDE features (e.g. Cmd-Alt-L) 
 * TODO: use the Spring 'MockMvc' testing framework to write (Spock) controller tests out of container and then (by inheriting them) also run them in container.
     note: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
     replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      

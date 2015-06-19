@@ -2,7 +2,7 @@ package mcwest
 
 import spock.lang.Specification
 
-class UsingGivenNotSetupSpec extends Specification {
+class UseGivenNotSetupSpec extends Specification {
 
     // bad, uses setup, less intuitive
     def 'strings are converted to lower case and trimmed, v1'() {
