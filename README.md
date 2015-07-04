@@ -21,6 +21,7 @@ http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for â
 * Spock allows many different syntaxes for tests.
 * For all but the simplest tests, use the given/when/then syntax 
    (reason: more readable, enforces correct operator use such as use of comparison in 'then')
+* For very simple tests, use the 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).   
 
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing youâ€™ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
@@ -69,7 +70,8 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 * TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
 * TODO: use IDE features (e.g. Cmd-Alt-L) 
 * TODO: use the Spring 'MockMvc' testing framework to write (Spock) controller tests out of container and then (by inheriting them) also run them in container.
-    note: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
+  for more info on this approach, see README-MOCKMVC.md
+* TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
     replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
 
 ##References
