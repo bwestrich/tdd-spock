@@ -11,6 +11,7 @@
 
  example code shown below: 
  
+ 
  Ancestor (mocked out controller test)
  
  class MyControllerSpec extends Specification {
@@ -46,3 +47,10 @@
          mockMvc = MockMvcHelper.buildMockMvcFromWebAppContext(wac)
      }
 
+
+NOTE: This same approach can also be used to in-container testing (service) code that is called by the controller.
+When doing so, we recommend separating out this test code into 2 new test classes so that the *ControllerSpec
+ classes only have responsibility for testing controller logic. Suggested names for new classes: 
+ *MockIntegrationSpec: (analogous to *ControllerSpec above) 
+ *IntegrationSpec: (analogous to *ControllerWebSpec above) 
+ 
