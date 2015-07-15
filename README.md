@@ -84,11 +84,10 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 ### Spock
 
 #### Guides
+* https://code.google.com/p/spock/wiki/SpockBasics: good starting place
 * https://leanpub.com/spockframeworknotebook/read
 * http://sett.ociweb.com/sett/settFeb2012.html
 * http://odinodinblog.herokuapp.com/blog/2012/11/12/spock-and-spring 
 
 #### Cheatsheet
 * https://github.com/craigatk/spock-mock-cheatsheet
-
-
