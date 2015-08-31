@@ -57,11 +57,11 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 ##Limit size of where tables  
  Break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
 
-##Put expected values at end of table  
+##Put expected values at end of where table  
  When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
 (e.g. `mcwest.SmallerWhereSpec`).
 
-##Use spies cautiously
+##Spy cautiously
 * Spock supports use of test spies to mock selected methods of the class under test (see `mcwest.learnspock.SpySpec`). 
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
@@ -70,11 +70,10 @@ Write controller tests out of container and then (by inheriting them) also run t
   for more info on this approach, see README-MOCKMVC.md
 
 ##Other concepts 
-DO AFTER SPRING CONF
-* TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
-    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
 * TODO: use thrown/notThrown to verify exception behavior
+* TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
+    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
 
 ##References
 
