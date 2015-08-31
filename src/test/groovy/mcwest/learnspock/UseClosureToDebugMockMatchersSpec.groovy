@@ -24,7 +24,7 @@ class UseClosureToDebugMockMatchersSpec extends Specification {
         ClassDependsOnClassUnderTest mockDependency = Mock(ClassDependsOnClassUnderTest)
         ClassUnderTest underTest = new ClassUnderTest(dependency: mockDependency)
         if (failTest) {
-            // this mock does not match as param value is different than what class under test uses to call the mock,
+            // this mock does not match, as param value is different than what class under test uses to call the mock,
             // leading to a null pointer exception
             mockDependency.convertString('Converted') >> "converted"
         } else {

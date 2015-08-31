@@ -7,7 +7,7 @@ import spock.lang.Specification
  */
 class SpySpec extends Specification {
 
-    def 'Spock spies can be used to mock out selective methods of the class under test'() {
+    def 'Spock spies can be used to mock out selected methods of the class under test'() {
         given:
         ClassUnderTest underTest = Spy(ClassUnderTest)
         underTest.getA() >> 3

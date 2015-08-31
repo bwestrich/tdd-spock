@@ -9,12 +9,12 @@ an Asset not an Afterthought". Each code example mentioned below is prefaced wit
 For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 ##Only test the right thing
-* Only test functionality that the item under test (IUT) provides to its consumers. 
+* Only test functionality that the class under test provides to its consumers. 
 * Do not test the internal implementation of the class. 
 * recommended: http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
 
-##Use tests to specify the system under test
-* Use the test to specify what the IUT does
+##Use tests to specify the class under test
+* Use the test to specify what the class under test does
 * Test all cases, listing the typical (non-edge) cases first
 * For code examples, see classes whose package names start with `mcwest.`
 
@@ -31,16 +31,17 @@ For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Ec
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
 * Make the method name as **short** as possible while capturing the essence of the tested functionality. 
-* Choose a method name that states **what** the IUT should do, **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
+* Choose a method name that states **what** the class under test should do, **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
 * **Do not use 'should', 'test', or 'verify'** in the method name, these words are self-evident and make test method names more wordy ('calculates price based on discount' is better than 'should calculate price based on discount').
 * **Do not use a groovy method name**, use a text based method comment (see code examples). 
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
-##Name your test classes based on your classes under test
-The name of your software test class should be {ClassUnderTest}Spec to allow IDEs to relate tests to the class under test.
+##Name your test class based on your class(es) under test
+* The name of your software test class should be {ClassUnderTest}Spec to allow IDEs to relate tests to the class under test (a.k.a. CUT). 
+* If we are testing a set of classes (some of which are package/private implementations), name the test after the public class.
 
 ##Don’t whitebox test
-Don't test the internal implementation of the IUT, only test its external API.
+Don't test the internal implementation of the class under test, only test its external API.
 * See the next points related to how to best use different types of test doubles in your Spock tests. 
 * Also see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
@@ -64,7 +65,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 (e.g. `mcwest.SmallerWhereSpec`).
 
 ##Use spies cautiously
-* Spock supports use of test spies to  mock selected methods of the 'class under test' (e.g. `mcwest.learnspock.SpySpec`). 
+* Spock supports use of test spies to mock selected methods of the class under test (see `mcwest.learnspock.SpySpec`). 
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
 ##Write tests for Spring web apps that work both standalone and in-container

@@ -3,9 +3,9 @@ package mcwest
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class SpecifyIUTSpec extends Specification {
+class SpecifyClassUnderTestSpec extends Specification {
 
-    /* Example of using tests to specify functionality of the item under test (IUT).
+    /* Example of using tests to specify functionality of the class under test.
     Note that most of the test cases are edge-cases. */
 
     @Unroll
@@ -27,7 +27,7 @@ class SpecifyIUTSpec extends Specification {
         'do not change strings that are longer than the padded length' | 123456 | '123456'
     }
 
-    // sample System Under Test
+    // sample Class Under Test
     def padLeftWithNZeros(Integer input, int minLength) {
         if (input == null || input == 0) {
             return null
