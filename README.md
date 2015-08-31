@@ -54,19 +54,35 @@ Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which 
 * Put **mocks** in the **'then:'** section.  
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
  
-##Limit size of where tables  
- Break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
+## Show API methods before internal methods
+* Sort classes in methods as follows: 
+   happy path tests
+   edge case and exception tests
+   non-test (utility) methods
+
+## Show happy path tests in where tables before edge cases and exceptions
+(e.g. `mcwest.SpecifyClassUnderTestSpec`).
+
+##Use comments and @Unroll to document where table test cases  
+ When using where tables, add a comment column as the first column and use it in the method name
+ (e.g. `mcwest.SpecifyClassUnderTestSpec`).
 
 ##Put expected values at end of where table  
  When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
-(e.g. `mcwest.SmallerWhereSpec`).
+(e.g. `mcwest.SpecifyClassUnderTestSpec`).
+
+##Limit size of where tables  
+ Wide tables often mean you are testing too much in one test. 
+ If possible, break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
 
 ##Spy cautiously
 * Spock supports use of test spies to mock selected methods of the class under test (see `mcwest.learnspock.SpySpec`). 
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
 ##Write tests for Spring web apps that work both standalone and in-container
-Write controller tests out of container and then (by inheriting them) also run them in container. For more info on this approach, see README-MOCKMVC.md.
+Write controller tests out of container and then (by inheriting them) also run them in container. 
+This allows you to write these tests quickly (since they run fast) even though they eventually will also run in-container. 
+For more info on this approach, see README-MOCKMVC.md.
 
 ##Other concepts 
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables.

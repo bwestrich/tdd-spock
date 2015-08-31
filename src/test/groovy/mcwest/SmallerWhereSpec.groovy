@@ -37,7 +37,7 @@ class SmallerWhereSpec extends Specification {
 
     // better (part 1 of 2)
     @Unroll
-    def 'size can be compared for different types of collections'() {
+    def 'size can be compared for different types of collections: #comment'() {
         given:
         ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -48,21 +48,22 @@ class SmallerWhereSpec extends Specification {
         expectedSameSize == actualSameSize
 
         where:
-        someMap | someList | expectedSameSize
-        null    | null     | false
-        [:]     | null     | false
-        null    | []       | false
-        [x: 1]  | null     | false
-        null    | [2]      | false
-        [:]     | []       | true
-        [x: 1]  | []       | false
-        []      | [1]      | false
-        [y: 2]  | [1]      | true
+        comment             | someMap | someList | expectedSameSize
+        'equal size'        | [y: 2]  | [1]      | true
+        'map larger'        | [x: 1]  | []       | false
+        'list larger'       | []      | [1]      | false
+
+        'both null'         | null    | null     | false
+        'empty list'        | [:]     | null     | false
+        'empty map'         | null    | []       | false
+        'map but null list' | [x: 1]  | null     | false
+        'list but null map' | null    | [2]      | false
+        'both empty'        | [:]     | []       | true
     }
 
     // better (part 2 of 2)
     @Unroll
-    def 'sizes are added, using zero for nulls'() {
+    def 'sizes are added, using zero for nulls: #comment'() {
         given:
         ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -73,19 +74,19 @@ class SmallerWhereSpec extends Specification {
         expectedSumOfSizes == actualSumOfSizes
 
         where:
-        someMap      | someList | expectedSumOfSizes
-        null         | null     | 0
-        [:]          | null     | 0
-        null         | []       | 0
-        [x: 1]       | null     | 1
-        null         | [2]      | 1
-        [:]          | []       | 0
-        [x: 1]       | []       | 1
-        []           | [1]      | 1
-        [y: 2]       | [1]      | 2
-        [:]          | [1, 2]   | 2
-        [y: 3]       | [1, 2]   | 3
-        [y: 3, z: 4] | [1]      | 3
+        comment             | someMap      | someList | expectedSumOfSizes
+        'sizes are added'   | [y: 2]       | [1]      | 2
+        'null list is zero' | [x: 1]       | null     | 1
+        'null map is zero'  | null         | [2]      | 1
+
+        'both null'         | null         | null     | 0
+        'null list'         | [:]          | null     | 0
+        'null map'          | null         | []       | 0
+        'both empty'        | [:]          | []       | 0
+        'empty list'        | [x: 1]       | []       | 1
+        'empty map'         | []           | [1]      | 1
+        'larger list'       | [y: 2]       | [1, 2]   | 3
+        'larger map'        | [y: 3, z: 4] | [1]      | 3
     }
 
 
