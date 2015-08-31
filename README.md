@@ -4,53 +4,53 @@
 
  -- Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
-The below guidelines (and their related code examples) can help you effectively use Spock for Test Driven Development (TDD). Such tests become an "Asset instead of an Afterthought". Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
-For more on TDD, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
+The below guidelines (and their related code examples) can help you effectively use Spock for Test Driven Development (TDD) to create tests that are 
+an Asset not an Afterthought". Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
+For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
-##Test the right thing
-* Only test functionality that the system under test (SUT) provides to its consumers. Do not test the internal implementation of the class. 
-* Here is a great discussion of testing the right thing. It discusses topics such as when to write a test, when you shouldn’t write a test, 
-and how you should name your tests. All examples are in Spock. 
-http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
+##Only test the right thing
+* Only test functionality that the item under test (IUT) provides to its consumers. 
+* Do not test the internal implementation of the class. 
+* recommended: http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
 
-##Use tests to specify
-* Use the test to specify what the SUT does, particularly edge cases.
-* For code example, see `mcwest.`
+##Use tests to specify the system under test
+* Use the test to specify what the IUT does
+* Test all cases, listing the typical (non-edge) cases first
+* For code examples, see classes whose package names start with `mcwest.`
 
 ##Use behavior driven syntax 
 * Spock allows many different syntaxes for tests.
-* For all but the simplest tests, use the given/when/then syntax 
-   (reason: more readable, enforces correct operator use such as use of comparison in 'then')
-* For very simple tests, use the 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).   
+* For all but the simplest tests, we recommend the given/when/then syntax 
+   (reason: more readable, and enforces correct operator use such as use of comparison (vs. assignment) in 'then')
+* For very simple tests, use 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).   
+
+##Consider adding comments to given/when/then for complex tests
+* Adding comments to given/when/then can clarify more complex tests 
+ (see `mcwest.ConsiderCommentsOnGivenWhenThenSpec`)
 
 ##Name your methods well
 *  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
 * Make the method name as **short** as possible while capturing the essence of the tested functionality. 
-* Choose a method name that states **what** the SUT should do, **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
+* Choose a method name that states **what** the IUT should do, **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
 * **Do not use 'should', 'test', or 'verify'** in the method name, these words are self-evident and make test method names more wordy ('calculates price based on discount' is better than 'should calculate price based on discount').
 * **Do not use a groovy method name**, use a text based method comment (see code examples). 
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Name your test classes based on your classes under test
-The name of your software test class should be {ClassUnderTest}Spec to allow for relating tests to the SUT.
+The name of your software test class should be {ClassUnderTest}Spec to allow IDEs to relate tests to the class under test.
 
 ##Don’t whitebox test
-Don't test the internal implementation of SUT, only test the external API.
+Don't test the internal implementation of the IUT, only test its external API.
 * See the next points related to how to best use different types of test doubles in your Spock tests. 
 * Also see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
-##Remember key differences between types of test doubles
+##Avoid Double Trouble
+* Choose the right type of test double....
 * Stubs: provide canned answers to calls (to other objects) made during a test. They allow you to write tests on an object without having to implement the objects it calls. There is no expectation on which stub methods will be called during a test. 
 * Mocks: stubs that expect to receive specific calls. Part of the test outcome is to evaluate that mock expecations were met.  
 Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which makes it harder to keep the distinction between Stubs and Mocks in mind. 
-
-##Use different test double types appropriately
-Spock uses different sections for your test code (given/when/then/where...). Using these sections correctly can greatly improve the readability and value of your tests. 
-
 * Put **stubs** in the **‘given:’** section. This section should not verify number of calls, method parameters, etc. These verifications make your tests harder to read and less resilient to refactoring 
-
 * Put **mocks** in the **'then:'** section.  
-
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
  
 ##Use behavior-oriented test section names
@@ -59,20 +59,27 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 ##Limit size of where tables  
  Break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
 
+##Put expected values at end of table  
+ When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
+(e.g. `mcwest.SmallerWhereSpec`).
+
 ##Use spies cautiously
 * Spock supports use of test spies to  mock selected methods of the 'class under test' (e.g. `mcwest.learnspock.SpySpec`). 
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
-##Other concepts (no examples for these yet)
-* TODO: when using where tables, for readability put expected values in the rightmost column(s) of the table
-* TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
-* TODO: use thrown/notThrown to verify exception behavior
-* TODO: use 'comment' strings after colons to make your tests more readable, e.g. given: 'the environment has not been initialized properly' ......
-* TODO: use IDE features (e.g. Cmd-Alt-L) 
-* TODO: use the Spring 'MockMvc' testing framework to write (Spock) controller tests out of container and then (by inheriting them) also run them in container.
+##Write tests for Spring web apps that work both standalone and in-container
+Write controller tests out of container and then (by inheriting them) also run them in container.
   for more info on this approach, see README-MOCKMVC.md
+
+##Other concepts (no examples for these yet)
+DO FOR SPRING CONF
+* Update spock dependencies 
+
+DO AFTER SPRING CONF
 * TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
     replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
+* TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
+* TODO: use thrown/notThrown to verify exception behavior
 
 ##References
 
