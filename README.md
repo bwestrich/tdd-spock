@@ -72,10 +72,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 Write controller tests out of container and then (by inheriting them) also run them in container.
   for more info on this approach, see README-MOCKMVC.md
 
-##Other concepts (no examples for these yet)
-DO FOR SPRING CONF
-* Update spock dependencies 
-
+##Other concepts 
 DO AFTER SPRING CONF
 * TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
     replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
