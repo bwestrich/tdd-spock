@@ -14,22 +14,22 @@ For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Ec
 * recommended: http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
 
 ##Use tests to specify the class under test
-* Use the test to specify what the class under test does
-* Test all cases, listing the typical (non-edge) cases first
+* Use the test to specify what the class under test does.
+* Test all cases, listing the typical (non-edge) cases first.
 * For code examples, see classes whose package names start with `mcwest.`
 
 ##Use behavior driven syntax 
 * Spock allows many different syntaxes for tests.
 * For all but the simplest tests, we recommend the given/when/then syntax (e.g. `mcwest.UseGivenNotSetupSpec`)
-   (reason: more readable, and enforces correct operator use such as use of comparison (vs. assignment) in 'then')
-* For very simple tests, use 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).   
+   (reason: more readable, and enforces correct operator use such as use of comparison (vs. assignment) in 'then').
+* For very simple tests, use 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).
 
 ##Consider adding comments to given/when/then for complex tests
-* Adding comments to given/when/then can clarify more complex tests 
+* Adding comments to given/when/then can clarify more complex tests. 
  (see `mcwest.ConsiderCommentsOnGivenWhenThenSpec`)
 
 ##Name your methods well
-*  The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
+* The name of your test method is the most important part of your test. While writing a test, this name helps you focus on testing the right thing. Later, when deciding how to enhance or fix your code, the name is the first thing you’ll refer to (since testing is the first step in both enhancing and fixing code). Lastly, the test method name helps you decide when a test is no longer needed and should be deleted. 
 * Make the method name as **short** as possible while capturing the essence of the tested functionality. 
 * Choose a method name that states **what** the class under test should do, **not how** you are testing it ('returns a boolean' is better than 'verify we return a boolean'). 
 * **Do not use 'should', 'test', or 'verify'** in the method name, these words are self-evident and make test method names more wordy ('calculates price based on discount' is better than 'should calculate price based on discount').
@@ -37,7 +37,7 @@ For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Ec
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Name your test class based on your class(es) under test
-* The name of your software test class should be {ClassUnderTest}Spec to allow IDEs to relate tests to the class under test (a.k.a. CUT). 
+* The name of your software test class should be {ClassUnderTest}Spec to allow IDEs to relate tests to the class under test. 
 * If we are testing a set of classes (some of which are package/private implementations), name the test after the public class.
 
 ##Don’t whitebox test
@@ -66,14 +66,13 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 * Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
 
 ##Write tests for Spring web apps that work both standalone and in-container
-Write controller tests out of container and then (by inheriting them) also run them in container.
-  for more info on this approach, see README-MOCKMVC.md
+Write controller tests out of container and then (by inheriting them) also run them in container. For more info on this approach, see README-MOCKMVC.md.
 
 ##Other concepts 
-* TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables 
-* TODO: use thrown/notThrown to verify exception behavior
+* TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables.
+* TODO: use thrown/notThrown to verify exception behavior.
 * TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
-    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).      
+    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).    
 
 ##References
 
