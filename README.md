@@ -20,7 +20,7 @@ For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Ec
 
 ##Use behavior driven syntax 
 * Spock allows many different syntaxes for tests.
-* For all but the simplest tests, we recommend the given/when/then syntax 
+* For all but the simplest tests, we recommend the given/when/then syntax (e.g. `mcwest.UseGivenNotSetupSpec`)
    (reason: more readable, and enforces correct operator use such as use of comparison (vs. assignment) in 'then')
 * For very simple tests, use 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).   
 
@@ -53,9 +53,6 @@ Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which 
 * Put **stubs** in the **‘given:’** section. This section should not verify number of calls, method parameters, etc. These verifications make your tests harder to read and less resilient to refactoring 
 * Put **mocks** in the **'then:'** section.  
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
- 
-##Use behavior-oriented test section names
-  Use given:, not setup: e.g. `mcwest.UseGivenNotSetupSpec`
  
 ##Limit size of where tables  
  Break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
