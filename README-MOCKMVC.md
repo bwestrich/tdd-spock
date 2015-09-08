@@ -31,7 +31,7 @@
  Descendant (non-mocked controller test) 
  
  @WebIntegrationTest(['server.port=0'])
- @ContextConfiguration(loader = SpringApplicationContextLoader, classes = Application.class)
+ @SpringApplicationConfiguration(classes = Application.class)
  class MyControllerWebSpec extends MyControllerSpec {
  
      @Autowired

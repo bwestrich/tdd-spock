@@ -84,14 +84,12 @@ Write controller tests out of container and then (by inheriting them) also run t
 This allows you to write these tests quickly (since they run fast) even though they eventually will also run in-container. 
 For more info on this approach, see README-MOCKMVC.md.
 
-##Other concepts 
+##Other concepts to write examples for 
 * TODO: remove as much repetitive ("wide") code in where tables as possible. e.g. 
     e.g. this:   | 5 | 
     not this:    | new BigDecimal(5) |     
 * TODO: use static or @Shared variables to centralize initialization of variables that are used in where tables.
 * TODO: use thrown/notThrown to verify exception behavior.
-* TODO: when writing Spock Spring tests, see if this fix (https://github.com/spockframework/spock/commit/718bf4261d3abaa6217ee059639c3aae2f8a5803) 
-    replaces the workaround documented here (http://stackoverflow.com/questions/24405727/integration-test-with-spring-boot-and-spock).    
 
 ##References
 
