@@ -14,12 +14,14 @@ class StubsAndMocksSpec extends Specification {
     def setup() {
         dataServiceStub = Stub(DataService)
         logServiceMock = Mock(LoggingService)
-        controller = new DataController(dataService: this.dataServiceStub, logService: this.logServiceMock)
+        controller = new DataController(dataService: this.dataServiceStub,
+                logService: this.logServiceMock)
     }
 
     def 'data is correctly transformed'() {
         given:
-        // DataService is a stub since calls to it do not need to be verified to test that data is correctly transformed.
+        // DataService is a stub since calls to it do not need to be verified to
+        // test that data is correctly transformed.
         // Note that we do not specify the number of times the method must be called. 
         dataServiceStub.retrieveData(dataId) >> rawData
         
