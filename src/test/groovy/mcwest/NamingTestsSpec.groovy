@@ -33,7 +33,7 @@ class NamingTestsSpec {
 
     // bad, uses groovy method name, which is less readable
     def usesActualMethodName() {
-        // this naming convention is less readable since can't use whitespace and puncuation
+        // this naming convention is less readable since can't use whitespace or punctuation
     }
 
     class ClassUnderTest {
