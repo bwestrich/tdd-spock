@@ -50,13 +50,14 @@ Don't test the internal implementation of the class under test, only test its ex
 * Also see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
 ##Avoid Double Trouble
-* Choose the right type of test double....
+* Choose the right type of double....
 * Stubs: provide canned answers to calls (to other objects) made during a test. They allow you to write tests on an object without having to implement the objects it calls. There is no expectation on which stub methods will be called during a test. 
 * Mocks: stubs that expect to receive specific calls. Part of the test outcome is to evaluate that mock expecations were met.  
 Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which makes it harder to keep the distinction between Stubs and Mocks in mind. 
 * Put **stubs** in the **‘given:’** section. This section should not verify number of calls, method parameters, etc. These verifications make your tests harder to read and less resilient to refactoring 
 * Put **mocks** in the **'then:'** section.  
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
+See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles/stubs/mocks/fakes.....
  
 ## Show API methods before internal methods
 * Sort classes in methods as follows: 
