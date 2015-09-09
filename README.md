@@ -113,6 +113,7 @@ For more info on this approach, see README-MOCKMVC.md.
 * https://leanpub.com/spockframeworknotebook/read
 * http://sett.ociweb.com/sett/settFeb2012.html
 * http://odinodinblog.herokuapp.com/blog/2012/11/12/spock-and-spring 
+* Kapelonis, K (2015) Java Testing With Spock. Manning.
 
 #### Cheatsheet
 * https://github.com/craigatk/spock-mock-cheatsheet
