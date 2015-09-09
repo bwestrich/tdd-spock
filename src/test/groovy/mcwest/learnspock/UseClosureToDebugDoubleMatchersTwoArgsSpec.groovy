@@ -19,13 +19,11 @@ class UseClosureToDebugDoubleMatchersTwoArgsSpec extends Specification {
             stubbedDependency.convertString('Converted!', '!') >> "converted"
         }
         if (useClosureToDebug) {
-            stubbedDependency.convertString({ inputString ->
+            stubbedDependency.convertString(_, _) >> {inputString, toAppend ->
                 println "inputString: '${inputString}'"
-                return true // Closure returns true, which forces matcher to match.
-            }, {toAppend ->
                 println "to append: '${toAppend}'"
-                return true // Closure returns true, which forces matcher to match.
-            }) >> "converted"
+                "converted"
+            }
         }
 
         when:

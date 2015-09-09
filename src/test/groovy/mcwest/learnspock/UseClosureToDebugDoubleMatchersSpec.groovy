@@ -33,11 +33,7 @@ class UseClosureToDebugDoubleMatchersSpec extends Specification {
             }) >> "converted"
         }
 
-        // note: if your stubbed method has more than one parameter,
-        // you must use a separate closure for each parameter
-        // vs. one parameter with multiple parameters. That is....
-        //    do this: ({ p1 -> ...}, {p2 -> ...}) >> ...
-        //   not this: ({ p1, p2 -> ...}) >> ...
+        // see also the 2 parameter example Spec
 
         when:
         def actualString = underTest.convertString('Converted!')
