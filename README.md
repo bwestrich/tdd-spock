@@ -67,7 +67,11 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
  When using where tables, add a comment column as the first column and use it in the method name
  (e.g. `mcwest.SpecifyClassUnderTestSpec`).
 
-##Put expected values at end of where table  
+##Put expected values (outputs) at end of where table  
+ When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
+(e.g. `mcwest.SpecifyClassUnderTestSpec`).
+
+##Separate inputs and expected with a double vertical bar ('||') 
  When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
 (e.g. `mcwest.SpecifyClassUnderTestSpec`).
 

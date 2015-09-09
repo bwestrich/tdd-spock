@@ -19,6 +19,7 @@ class SmallerWhereSpec extends Specification {
         expectedSameSize == actualSameSize
         expectedSumOfSizes == actualSumOfSizes
 
+        // for some reason, IntelliJ doesn't like double vertical lines in following table
         where:
         comment          | someMap      | someList | expectedSameSize | expectedSumOfSizes
         'null'           | null         | null     | false            | 0
@@ -48,17 +49,17 @@ class SmallerWhereSpec extends Specification {
         expectedSameSize == actualSameSize
 
         where:
-        comment             | someMap | someList | expectedSameSize
-        'equal size'        | [y: 2]  | [1]      | true
-        'map larger'        | [x: 1]  | []       | false
-        'list larger'       | []      | [1]      | false
+        comment             | someMap | someList || expectedSameSize
+        'equal size'        | [y: 2]  | [1]      || true
+        'map larger'        | [x: 1]  | []       || false
+        'list larger'       | []      | [1]      || false
 
-        'both null'         | null    | null     | false
-        'empty list'        | [:]     | null     | false
-        'empty map'         | null    | []       | false
-        'map but null list' | [x: 1]  | null     | false
-        'list but null map' | null    | [2]      | false
-        'both empty'        | [:]     | []       | true
+        'both null'         | null    | null     || false
+        'empty list'        | [:]     | null     || false
+        'empty map'         | null    | []       || false
+        'map but null list' | [x: 1]  | null     || false
+        'list but null map' | null    | [2]      || false
+        'both empty'        | [:]     | []       || true
     }
 
     // better (part 2 of 2)
@@ -74,19 +75,19 @@ class SmallerWhereSpec extends Specification {
         expectedSumOfSizes == actualSumOfSizes
 
         where:
-        comment             | someMap      | someList | expectedSumOfSizes
-        'sizes are added'   | [y: 2]       | [1]      | 2
-        'null list is zero' | [x: 1]       | null     | 1
-        'null map is zero'  | null         | [2]      | 1
+        comment             | someMap      | someList || expectedSumOfSizes
+        'sizes are added'   | [y: 2]       | [1]      || 2
+        'null list is zero' | [x: 1]       | null     || 1
+        'null map is zero'  | null         | [2]      || 1
 
-        'both null'         | null         | null     | 0
-        'null list'         | [:]          | null     | 0
-        'null map'          | null         | []       | 0
-        'both empty'        | [:]          | []       | 0
-        'empty list'        | [x: 1]       | []       | 1
-        'empty map'         | []           | [1]      | 1
-        'larger list'       | [y: 2]       | [1, 2]   | 3
-        'larger map'        | [y: 3, z: 4] | [1]      | 3
+        'both null'         | null         | null     || 0
+        'null list'         | [:]          | null     || 0
+        'null map'          | null         | []       || 0
+        'both empty'        | [:]          | []       || 0
+        'empty list'        | [x: 1]       | []       || 1
+        'empty map'         | []           | [1]      || 1
+        'larger list'       | [y: 2]       | [1, 2]   || 3
+        'larger map'        | [y: 3, z: 4] | [1]      || 3
     }
 
 
