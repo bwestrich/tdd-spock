@@ -17,14 +17,14 @@ class SpecifyClassUnderTestSpec extends Specification {
         actualOutput == expectedOutput
 
         where:
-        comment                                                        | input  || expectedOutput
-        'typical usage'                                                | 1234   || '01234'
+        comment                    | input  || expectedOutput
+        'typical usage'            | 1234   || '01234'
 
-        'no padding needed'                                            | 12345  || '12345'
-        'max padding needed'                                           | 1      || '00001'
-        'treat zero as null'                                           | 0      || null
-        'return null as-is'                                            | null   || null
-        'do not change strings that are longer than the padded length' | 123456 || '123456'
+        'no padding needed'        | 12345  || '12345'
+        'max padding needed'       | 1      || '00001'
+        'treat zero as null'       | 0      || null
+        'return null as-is'        | null   || null
+        'long strings not changed' | 123456 || '123456'
     }
 
     // sample Class Under Test
