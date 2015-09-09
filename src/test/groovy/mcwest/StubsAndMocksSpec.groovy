@@ -12,7 +12,7 @@ class StubsAndMocksSpec extends Specification {
     DataController controller
 
     def setup() {
-        dataServiceStub = Mock(DataService)
+        dataServiceStub = Stub(DataService)
         logServiceMock = Mock(LoggingService)
         controller = new DataController(dataService: this.dataServiceStub, logService: this.logServiceMock)
     }
