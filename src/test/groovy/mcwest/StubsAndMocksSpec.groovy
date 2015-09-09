@@ -26,6 +26,7 @@ class StubsAndMocksSpec extends Specification {
         dataServiceStub.retrieveData(dataId) >> rawData
         
         // Other tools for writing 'lenient' stubs are:
+        //   (_ as String) to stub a method call based on parameter type (String for example)
         //   (_, _, _, ...) to stub a method call based only on the number of arguments passed to it
         //        i.e. myMethod(_, _) matches myMethod(a, b) or myMethod(a, c)
         //   (*_) to stub a method call regardless of the arguments passed to it, e.g.  
