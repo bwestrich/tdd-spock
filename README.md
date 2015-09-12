@@ -1,9 +1,3 @@
-todo
-new package that shows successive versions (not using git) of calories example including (as inner class) code under test 
-example of @Ignore tag:  
-always include a // TODO: tag with any @Ignore tag you check in with the long term plan for 
-  unignoring (or deleting) the test. 
-
 #tdd-spock -- Test Driven Design Guidelines (with Spock examples)  
 
 *"If you want to refactor, the essential precondition is having solid tests.”* 
@@ -34,6 +28,10 @@ Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which 
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
 See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles/stubs/mocks/fakes.....
 
+##Delete tests that no longer provide value
+* Immediately fix, ignore, or delete broken tests. 
+* If a test needs to be temporarily broken, @Ignore it and add a // TODO: comment with your plan for un-ignoring (or deleting) it.
+For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`.
 
 #Write tests that specify the tested functionality 
  
@@ -77,6 +75,9 @@ See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles
 ##Limit size of where tables  
  Wide tables often mean you are testing too much in one test. 
  If possible, break wide tables into smaller tables (e.g. `mcwest.SmallerWhereSpec`).
+ 
+##Full example of testing using tables
+* See `mcwest.casestudies.calories`
 
 
 #Misc. Spock tips
@@ -119,7 +120,6 @@ For more info on this approach, see README-MOCKMVC.md.
 #References
 
 ##Testing
-
 * http://www.martinfowler.com/bliki/TestDouble.html
 * http://xunitpatterns.com/Mocks,%20Fakes,%20Stubs%20and%20Dummies.html
 * http://www.javacodegeeks.com/2012/09/test-driven-traps-part-1.html (search for ‘Verify only the right thing’).
