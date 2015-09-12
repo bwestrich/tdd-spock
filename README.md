@@ -11,7 +11,7 @@ For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Ec
 
 #Test the right thing
 * Only test functionality that the class under test provides to its consumers.
-* Do not test internal implementation. 
+* Do not test internal implementations. 
 
 ##Don’t whitebox test
 Don't test the internal implementation of the class under test, only test its external API.
@@ -28,7 +28,14 @@ Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which 
 See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriately. 
 See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles/stubs/mocks/fakes.....
 
-##Delete tests that no longer provide value
+##Don't test what's already been tested
+* Don't write unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
+   e.g. ok to write tests that test the Grails validator to learn Grails, but delete these when done
+
+##Test productively 
+* Reduce code coverage as you move from unit to integration and functional tests. 
+
+##Fix or delete broken tests
 * Immediately fix, ignore, or delete broken tests. 
 * If a test needs to be temporarily broken, @Ignore it and add a // TODO: comment with your plan for un-ignoring (or deleting) it.
 For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`.

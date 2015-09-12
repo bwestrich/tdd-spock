@@ -4,8 +4,8 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Don't flag calories as having missing ingredient nutrients
- * if alcohol value was calculated using missing ingredient nutrients.
+ * If alcohol value was calculated using missing ingredient nutrients,
+ * don't flag calories as having missing ingredient nutrients.
  */
 class VeCalculateCaloriesIngMissingValues2Spec extends Specification {
 
