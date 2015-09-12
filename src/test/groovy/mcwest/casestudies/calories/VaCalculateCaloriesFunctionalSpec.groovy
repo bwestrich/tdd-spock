@@ -6,6 +6,7 @@ import spock.lang.Specification
 
 /**
  * Calorie calculation algorithm.
+ * nb: this and all other specs in this project compile and do not fail.
  */
 class VaCalculateCaloriesFunctionalSpec extends Specification {
 
