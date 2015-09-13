@@ -15,7 +15,10 @@ class VzCalculateCaloriesFinal {
         if (calsFromCarb != null && calsFromFat != null && calsFromProtein != null) {
             calories.value =
                     new Double(calsFromCarb + calsFromFat + calsFromProtein + calsFromAlcohol)
-            calories.missingValues = food.carb.missingValues || food.fat.missingValues || food.protein.missingValues
+            calories.missingValues =
+                    food.carb.missingValues ||
+                    food.fat.missingValues ||
+                    food.protein.missingValues
         }
         return calories
     }

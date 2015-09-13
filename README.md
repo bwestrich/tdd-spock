@@ -31,8 +31,6 @@ See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles
 ##Don't test what's already been tested
 * Don't write unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
    e.g. ok to write tests that test the Grails validator to learn Grails, but delete these when done
-
-##Test productively 
 * Reduce code coverage as you move from unit to integration and functional tests. 
 
 ##Fix or delete broken tests
@@ -40,7 +38,7 @@ See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles
 * If a test needs to be temporarily broken, @Ignore it and add a // TODO: comment with your plan for un-ignoring (or deleting) it.
 For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`.
 
-#Write tests that specify the tested functionality 
+#Specify the tested functionality 
  
 ##Emphasize typical usage cases
 * List the typical (non-edge) cases first, then the edge cases.

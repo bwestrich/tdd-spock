@@ -23,7 +23,11 @@ class VaCalculateCaloriesFunctionalSpec extends Specification {
         NutrientValue calories = calculateCalories(food)
 
         then:
-        calories.value == 4 * carbValue + 9 * fatValue + 4 * proteinValue + 7 * alcoholValue
+        calories.value ==
+                4 * carbValue +
+                9 * fatValue +
+                4 * proteinValue +
+                7 * alcoholValue
     }
 
 }
