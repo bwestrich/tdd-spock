@@ -5,7 +5,9 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Special case: alcohol value is missing from most foods, so if alcohol is missing still calculate calories.
+ * Special case: most foods don't have alcohol,
+ * so if alcohol is missing,
+ * calculate calories assuming zero alcohol.
  */
 class VcCalculateCaloriesMissingValues3Spec extends Specification {
 

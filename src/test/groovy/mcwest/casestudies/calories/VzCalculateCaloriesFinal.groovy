@@ -10,11 +10,11 @@ class VzCalculateCaloriesFinal {
         NutrientValue calories = new NutrientValue()
         Double calsFromCarb = food.carb.value != null ? food.carb.value * carbFactor : null
         Double calsFromFat = food.fat.value != null ? food.fat.value * fatFactor : null
-        Double calsFromProtein = food.protein.value != null ? food.protein.value * proFactor : null
-        Double calsFromAlcohol = food.alcohol.value != null ? food.alcohol.value * alcFactor : 0
-        if (calsFromCarb != null && calsFromFat != null && calsFromProtein != null) {
+        Double calsFromPro = food.protein.value != null ? food.protein.value * proFactor : null
+        Double calsFromAlc = food.alcohol.value != null ? food.alcohol.value * alcFactor : 0
+        if (calsFromCarb != null && calsFromFat != null && calsFromPro != null) {
             calories.value =
-                    new Double(calsFromCarb + calsFromFat + calsFromProtein + calsFromAlcohol)
+                    new Double(calsFromCarb + calsFromFat + calsFromPro + calsFromAlc)
             calories.missingValues =
                     food.carb.missingValues ||
                     food.fat.missingValues ||

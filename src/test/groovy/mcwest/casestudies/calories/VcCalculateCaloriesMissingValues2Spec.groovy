@@ -5,7 +5,8 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Add missing values cases (if any input nutrients are missing, calories are unknown).
+ * Add missing values cases
+ * (if any input nutrients are missing, calories are unknown).
  */
 class VcCalculateCaloriesMissingValues2Spec extends Specification {
 
