@@ -1,12 +1,16 @@
-#tdd-spock -- Test Driven Design Guidelines (with Spock examples)  
+#tdd-spock -- Test Driven Design/Development Guidelines (with Spock examples)  
 
 *"If you want to refactor, the essential precondition is having solid tests.”* 
 
  -- Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
-The below guidelines (and their related code examples) can help you effectively use Spock for Test Driven Development (TDD) to create tests that are 
-an Asset not an Afterthought". Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
-For info on using TDD with JUnit, including code examples and a Java/IntelliJ/Eclipse TDD cribsheet, see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
+The below guidelines (and their related code examples) can help you effectively use 
+Spock for Test Driven Development (TDD) to create tests that are 
+an "Asset not an Afterthought". 
+Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
+For info on using TDD with JUnit, including code examples 
+and a Java/IntelliJ/Eclipse TDD cribsheet, 
+see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 
 #Test the right thing
@@ -103,15 +107,19 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 
 ##Use closures to troubleshoot issues with double method matchers 
 * If methods on your mocks or stubs are not getting matched, use closures to find out why.
-* For examples using methods with single or multiple arguments, see `mcwest.learnspock.UseClosureToDebugDoubleMatchers*`. 
+* For examples using methods with single or multiple arguments, 
+see `mcwest.learnspock.UseClosureToDebugDoubleMatchers*`. 
 
 ##Spy cautiously
-* Spock supports use of test spies to mock selected methods of the class under test (see `mcwest.learnspock.SpySpec`). 
-* Though sometimes needed, spies are often a code smell; perhaps a sign of white box testing or an indication that an object has too many responsibilities. 
+* Spock supports use of test spies to mock selected methods of the class under test 
+(see `mcwest.learnspock.SpySpec`). 
+* Though sometimes needed, spies are often a code smell; perhaps a sign of 
+white box testing or an indication that an object has too many responsibilities. 
 
 ##Write tests for Spring web apps that work both standalone and in-container
 Write controller tests out of container and then (by inheriting them) also run them in container. 
-This allows you to write these tests quickly (since they run fast) even though they eventually will also run in-container. 
+This allows you to write these tests quickly (since they run fast) even though 
+they eventually will also run in-container. 
 For more info on this approach, see README-MOCKMVC.md.
 
 
