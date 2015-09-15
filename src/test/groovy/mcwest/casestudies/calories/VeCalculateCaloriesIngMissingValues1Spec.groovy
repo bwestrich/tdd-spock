@@ -6,13 +6,14 @@ import spock.lang.Unroll
 
 /**
  * Treat missing ingredient nutrient values as zero and flag.
+ * If missing food nutrient values for carb/fat/pro, flag is undefined.
  */
 class VeCalculateCaloriesIngMissingValues1Spec extends Specification {
 
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories: #comment"() {
+    def "calculate calories, flagging missing ingredient values: #comment"() {
         when:
         NutrientValue calories = calculateCalories(food)
 

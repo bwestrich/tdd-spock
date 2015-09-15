@@ -4,13 +4,12 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * If alcohol value was calculated using missing ingredient nutrients,
- * don't flag calories as having missing ingredient nutrients.
+ * Don't flag missing ingredient alcohol values.
  */
 class VeCalculateCaloriesIngMissingValues2Spec extends Specification {
 
     @Unroll
-    def "calculate calories: #comment"() {
+    def "calculate calories, flagging missing ingredient non-alcohol values: #comment"() {
         given:
         NutrientValue carbVal = new NutrientValue(nutrient: Nutrient.CARB, value: carb, missingValues: carbM)
         NutrientValue fatVal = new NutrientValue(nutrient: Nutrient.FAT, value: fat, missingValues: fatM)

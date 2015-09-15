@@ -5,7 +5,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Use where table (in prep for adding missing value special case).
+ * Convert to where table (in prep for adding missing value special case).
  */
 class VcCalculateCaloriesMissingValues1Spec extends Specification {
 

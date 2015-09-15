@@ -5,16 +5,15 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Special case: most foods don't have alcohol,
- * so if alcohol is missing,
- * calculate calories assuming zero alcohol.
+ * Most foods don't have alcohol, so if alcohol is missing,
+ * calculate calories assuming zero for alcohol.
  */
 class VcCalculateCaloriesMissingValues3Spec extends Specification {
 
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories: #comment"() {
+    def "calculate calories if not missing carb, fat, or protein: #comment"() {
         when:
         NutrientValue calories = calculateCalories(food)
 

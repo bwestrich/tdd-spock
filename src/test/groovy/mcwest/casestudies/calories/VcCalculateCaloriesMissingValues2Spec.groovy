@@ -5,15 +5,14 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /**
- * Add missing values cases
- * (if any input nutrients are missing, calories are unknown).
+ * Handle missing values.
  */
 class VcCalculateCaloriesMissingValues2Spec extends Specification {
 
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories: #comment"() {
+    def "calculate calories if no missing input values: #comment"() {
         when:
         NutrientValue calories = calculateCalories(food)
 
