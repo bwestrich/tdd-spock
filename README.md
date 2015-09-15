@@ -5,8 +5,7 @@
  -- Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
 The below guidelines (and their related code examples) can help you effectively use 
-Spock for Test Driven Development (TDD) to create tests that are 
-an "Asset not an Afterthought". 
+Spock to create tests that are an "Asset not an Afterthought". 
 Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
 For info on using TDD with JUnit, including code examples 
 and a Java/IntelliJ/Eclipse TDD cribsheet, 
@@ -15,7 +14,6 @@ see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
 
 #Test the right thing
 * Only test functionality that the class under test provides to its consumers.
-* Do not test internal implementations. 
 
 ##Don’t whitebox test
 Don't test the internal implementation of the class under test, only test its external API.
@@ -23,7 +21,7 @@ Don't test the internal implementation of the class under test, only test its ex
 * Also see [Perils of whitebox testing](https://bitbucket.org/bwestrich/java-tdd/wiki/Perils%20of%20Whitebox%20testing).
 
 ##Avoid Double Trouble
-* Choose the right type of double....
+* To help avoid whitebox testing, choose the right type of double....
 * Stubs: provide canned answers to calls (to other objects) made during a test. They allow you to write tests on an object without having to implement the objects it calls. There is no expectation on which stub methods will be called during a test. 
 * Mocks: stubs that expect to receive specific calls. Part of the test outcome is to evaluate that mock expecations were met.  
 Note: Spock uses the same class (Mock) to implement both Stubs and Mocks, which makes it harder to keep the distinction between Stubs and Mocks in mind. 
@@ -34,7 +32,7 @@ See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles
 
 ##Don't test what's already been tested
 * Don't write unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
-   e.g. ok to write tests that test the Grails validator to learn Grails, but delete these when done
+   For example, it's ok to write tests that test the Grails validator to learn Grails, but delete these afterwards.
 * Reduce code coverage as you move from unit to integration and functional tests. 
 
 ##Fix or delete broken tests
@@ -57,10 +55,10 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Show API test methods first
-* Sort methods in test classes as follows: 
-   happy path tests
-   edge case tests
-   non-test (utility) methods
+###Sort methods in test classes as follows: 
+* happy path tests
+* edge case tests
+* non-test (utility) methods
 
 ##Name your test class based on your class(es) under test
 * The name of your software test class should be {ClassUnderTest}Spec. This allows humans and IDEs to relate tests to the class under test. 
@@ -70,16 +68,16 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 #Write readable where tables
 
 ##Use comments and @Unroll to document where tables  
- When using where tables, add a comment column as the first column and use it in the method name
+ Add a comment column as the first column to all tables, and print it (via templating) in the method name
  (e.g. `mcwest.SpecifyClassUnderTestSpec`).
 
-##Put expected values (outputs) at end of where table  
- When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
+##Put expected values (outputs) at the end of the where table  
+ Put expected values in the rightmost column(s) of the table, as this increases readability
 (e.g. `mcwest.SpecifyClassUnderTestSpec`).
 
 ##Separate inputs and expected outputs with a double vertical bar ('||') 
  When using where tables, put expected values in the rightmost column(s) of the table, as this increases readability
-(e.g. `mcwest.SpecifyClassUnderTestSpec`).
+(e.g. `mcwest.SpecifyClassUnderTestSpec`). Note: IntelliJ has some minor glitches related to formatting these. 
 
 ##Limit size of where tables  
  Wide tables often mean you are testing too much in one test. 
@@ -102,7 +100,7 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 * Ideally, only ONE line. 
 
 ##Optionally add comments to given/when/then for complex tests
-* Adding comments to given/when/then can clarify more complex tests. 
+* Adding comments to given/when/then can clarify more complex tests
  (see `mcwest.ConsiderCommentsOnGivenWhenThenSpec`)
 
 ##Use closures to troubleshoot issues with double method matchers 
@@ -113,7 +111,7 @@ see `mcwest.learnspock.UseClosureToDebugDoubleMatchers*`.
 ##Spy cautiously
 * Spock supports use of test spies to mock selected methods of the class under test 
 (see `mcwest.learnspock.SpySpec`). 
-* Though sometimes needed, spies are often a code smell; perhaps a sign of 
+* Though sometimes needed, spies are often a code smell: perhaps a sign of 
 white box testing or an indication that an object has too many responsibilities. 
 
 ##Write tests for Spring web apps that work both standalone and in-container
@@ -123,7 +121,7 @@ they eventually will also run in-container.
 For more info on this approach, see README-MOCKMVC.md.
 
 
-#Other concepts to write examples for 
+#Concepts for which we don't have example code
 * TODO: remove as much repetitive ("wide") code in where tables as possible. e.g. 
     e.g. this:   | 5 | 
     not this:    | new BigDecimal(5) |     
