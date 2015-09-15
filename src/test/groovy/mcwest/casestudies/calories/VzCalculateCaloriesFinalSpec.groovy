@@ -25,6 +25,7 @@ class VzCalculateCaloriesFinalSpec extends Specification {
         calories.value == cal
         calories.missingValues == calM
 
+        // note: IntelliJ currently doesn't format this table correctly if the double bars are included
         where:
         comment            | carb | fat  | pro  | alc  | carbM | fatM  | proM  | alcM  || cal  | calM
         'happy path'       | 1    | 2    | 3    | 4    | false | false | false | false || 62   | false

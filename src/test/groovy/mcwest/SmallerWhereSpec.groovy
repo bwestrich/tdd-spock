@@ -19,21 +19,20 @@ class SmallerWhereSpec extends Specification {
         expectedSameSize == actualSameSize
         expectedSumOfSizes == actualSumOfSizes
 
-        // for some reason, IntelliJ doesn't like double vertical lines in following table
         where:
-        comment          | someMap      | someList | expectedSameSize | expectedSumOfSizes
-        'null'           | null         | null     | false            | 0
-        'empty and null' | [:]          | null     | false            | 0
-        'null and empty' | null         | []       | false            | 0
-        'one and null'   | [x: 1]       | null     | false            | 1
-        'null and one'   | null         | [2]      | false            | 1
-        'empty'          | [:]          | []       | true             | 0
-        'one and empty'  | [x: 1]       | []       | false            | 1
-        'empty and one'  | []           | [1]      | false            | 1
-        'one and one'    | [y: 2]       | [1]      | true             | 2
-        'empty and two'  | [:]          | [1, 2]   | false            | 2
-        'one and two'    | [y: 3]       | [1, 2]   | false            | 3
-        'two and one'    | [y: 3, z: 4] | [1]      | false            | 3
+        comment          | someMap      | someList | expectedSameSize || expectedSumOfSizes
+        'null'           | null         | null     | false            || 0
+        'empty and null' | [:]          | null     | false            || 0
+        'null and empty' | null         | []       | false            || 0
+        'one and null'   | [x: 1]       | null     | false            || 1
+        'null and one'   | null         | [2]      | false            || 1
+        'empty'          | [:]          | []       | true             || 0
+        'one and empty'  | [x: 1]       | []       | false            || 1
+        'empty and one'  | []           | [1]      | false            || 1
+        'one and one'    | [y: 2]       | [1]      | true             || 2
+        'empty and two'  | [:]          | [1, 2]   | false            || 2
+        'one and two'    | [y: 3]       | [1, 2]   | false            || 3
+        'two and one'    | [y: 3, z: 4] | [1]      | false            || 3
     }
 
     // better (part 1 of 2)
