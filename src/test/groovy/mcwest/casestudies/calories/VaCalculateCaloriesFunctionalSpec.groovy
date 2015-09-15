@@ -19,8 +19,8 @@ class VaCalculateCaloriesFunctionalSpec extends Specification {
         def fatValue = 2
         def proteinValue = 3
         def alcoholValue = 4
-        Food food = new Food(carb: carbValue, fat: fatValue, protein: proteinValue,
-                alcohol: alcoholValue)
+        Food food = new Food(carb: carbValue, fat: fatValue,
+                protein: proteinValue, alcohol: alcoholValue)
 
         when:
         NutrientValue calories = calculateCalories(food)

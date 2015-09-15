@@ -12,12 +12,29 @@ class StubsAndMocksSpec extends Specification {
     DataController controller
 
     def setup() {
+        // defining stubs and mocks
         dataServiceStub = Stub(DataService)
         logServiceMock = Mock(LoggingService)
         controller = new DataController(dataService: this.dataServiceStub,
                 logService: this.logServiceMock)
     }
 
+    def 'data transformations are logged'() {
+        given:
+        // stubs are only used to supporting the test,
+        // their use is not verified
+        dataServiceStub.retrieveData(dataId) >> rawData
+
+        when:
+        controller.getTransformedData(dataId)
+
+        then:
+        // mocks are used to verify that test expectations are met
+        1 * logServiceMock.log(dataId, rawData)
+    }
+
+    // the code in this method doesn't illustrate anything not already illustrated
+    // in previous method, but the comments show more examples of using stubs.
     def 'data is correctly transformed'() {
         given:
         // DataService is a stub, as calls to it do not need to be verified
@@ -32,23 +49,14 @@ class StubsAndMocksSpec extends Specification {
         //   (*_) to stub a method call regardless of the arguments passed to it, e.g.  
         //        i.e. myMethod(*_) matches myMethod(), myMethod(a), myMethod(a, b), .....
 
+        // note: we don't need to stub out the call to logService,
+        // as spock uses lenient mocks (i.e. calls to non mocked methods return null).
+
         when:
         def actualData = controller.getTransformedData(dataId)
 
         then:
         actualData == expectedTransformedData
-    }
-
-    def 'data retrieval is logged'() {
-        given:
-        dataServiceStub.retrieveData(dataId) >> rawData
-
-        when:
-        controller.getTransformedData(dataId)
-
-        then:
-        // logService is a mock, since calls to it must be verified to test that we are logging
-        1 * logServiceMock.log(dataId, rawData)
     }
 
     class DataController {
