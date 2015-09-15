@@ -31,7 +31,7 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles/stubs/mocks/fakes.....
 
 ##Don't test what's already been tested
-* Don't save unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
+* Don't save unit tests for code that is already unit tested elsewhere.
    For example, it's ok to write tests that test the Grails validator to learn how it works, 
    but delete such tests afterward.
 * Reduce code coverage as you move from unit to integration and functional tests. 
@@ -56,7 +56,7 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Show API test methods first
-###... by sort methods in test classes as follows: 
+###... by sorting methods in test classes as follows: 
 * happy path tests
 * edge case tests
 * non-test (utility) methods
@@ -106,7 +106,7 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 
 ##Use closures to troubleshoot issues with double method matchers 
 * If methods on your mocks or stubs are not getting matched, use closures to find out why. 
-For examples using methods with single or multiple arguments, 
+For examples using a method with single or with multiple arguments, 
 see `mcwest.learnspock.UseClosureToDebugDoubleMatchers*`. 
 
 ##Spy cautiously
