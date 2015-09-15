@@ -3,7 +3,7 @@ package mcwest
 
 class NamingTestsSpec {
 
-    // good
+    // good, describes what the class is expected to do
     def 'strings are converted to lower case and trimmed'() {
         given:
         ClassUnderTest underTest = new ClassUnderTest()
@@ -19,15 +19,15 @@ class NamingTestsSpec {
     def 'convert strings to lower case and trim them'() {
     }
 
-    // bad, uses 'verify' which is verbose
+    // bad, uses 'verify' which is redundant
     def 'verify we can convert strings to lower case and trim them'() {
     }
 
-    // bad, uses 'test' which is verbose
+    // bad, uses 'test' which is redundant
     def 'test we can convert strings to lower case and trim them'() {
     }
 
-    // bad, uses 'should' which is verbose
+    // bad, uses 'should' which is redundant
     def 'should convert strings to lower case and trim them'() {
     }
 

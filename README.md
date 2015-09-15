@@ -31,8 +31,9 @@ See `mcwest.StubsAndMocksSpec` for examples of using stubs and mocks appropriate
 See http://www.martinfowler.com/bliki/TestDouble.html for definitions of doubles/stubs/mocks/fakes.....
 
 ##Don't test what's already been tested
-* Don't write unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
-   For example, it's ok to write tests that test the Grails validator to learn Grails, but delete these afterwards.
+* Don't save unit tests for code already unit tested (by your own tests, or those of well-tested 3rd party frameworks)
+   For example, it's ok to write tests that test the Grails validator to learn how it works, 
+   but delete such tests afterward.
 * Reduce code coverage as you move from unit to integration and functional tests. 
 
 ##Fix or delete broken tests
@@ -55,7 +56,7 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 * For code examples, see `mcwest.NamingTestsSpec`. nb: Of all the code examples provided in this repo, the examples for this point need the most improvement (suggestions/pull requests welcome of course!).
 
 ##Show API test methods first
-###Sort methods in test classes as follows: 
+###... by sort methods in test classes as follows: 
 * happy path tests
 * edge case tests
 * non-test (utility) methods
@@ -95,7 +96,7 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
    (reason: more readable, and enforces correct operator use such as use of comparison (vs. assignment) in 'then').
 * For very simple tests, use 'expect' syntax (see `mcwest.UseExpectForSimpleSpec`).
 
-##Keep when block as short as possible
+##Keep the when block as short as possible
 * This makes it easy to understand what you are testing.
 * Ideally, only ONE line. 
 
@@ -104,15 +105,15 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
  (see `mcwest.ConsiderCommentsOnGivenWhenThenSpec`)
 
 ##Use closures to troubleshoot issues with double method matchers 
-* If methods on your mocks or stubs are not getting matched, use closures to find out why.
-* For examples using methods with single or multiple arguments, 
+* If methods on your mocks or stubs are not getting matched, use closures to find out why. 
+For examples using methods with single or multiple arguments, 
 see `mcwest.learnspock.UseClosureToDebugDoubleMatchers*`. 
 
 ##Spy cautiously
-* Spock supports use of test spies to mock selected methods of the class under test 
+* Spock supports the use of test spies. 
+* Spies allow some methods on the CUT to be mocked while others use their unmocked implementation
 (see `mcwest.learnspock.SpySpec`). 
-* Though sometimes needed, spies are often a code smell: perhaps a sign of 
-white box testing or an indication that an object has too many responsibilities. 
+* Spies are usually only needed when testing legacy code or poorly designed code. 
 
 ##Write tests for Spring web apps that work both standalone and in-container
 Write controller tests out of container and then (by inheriting them) also run them in container. 
