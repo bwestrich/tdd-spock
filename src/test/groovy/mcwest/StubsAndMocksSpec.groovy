@@ -20,9 +20,9 @@ class StubsAndMocksSpec extends Specification {
 
     def 'data is correctly transformed'() {
         given:
-        // DataService is a stub since calls to it do not need to be verified to
-        // test that data is correctly transformed.
-        // Note that we do not specify the number of times the method must be called. 
+        // DataService is a stub, as calls to it do not need to be verified
+        // in order to test that the data is correctly transformed.
+        // We do not specify the number of times the method must be called.
         dataServiceStub.retrieveData(dataId) >> rawData
         
         // Other tools for writing 'lenient' stubs are:
@@ -39,7 +39,7 @@ class StubsAndMocksSpec extends Specification {
         actualData == expectedTransformedData
     }
 
-    def 'retrieval is logged'() {
+    def 'data retrieval is logged'() {
         given:
         dataServiceStub.retrieveData(dataId) >> rawData
 

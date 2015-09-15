@@ -138,12 +138,12 @@ For more info on this approach, see README-MOCKMVC.md.
 
 ##Spock
 
-###Guides
+###Complete documentation
 * https://code.google.com/p/spock/wiki/SpockBasics: good starting place
+* Kapelonis, K (2015) Java Testing With Spock. Manning. :another good general reference
 * https://leanpub.com/spockframeworknotebook/read
 * http://sett.ociweb.com/sett/settFeb2012.html
 * http://odinodinblog.herokuapp.com/blog/2012/11/12/spock-and-spring 
-* Kapelonis, K (2015) Java Testing With Spock. Manning.
 
 ###Cheatsheet
 * https://github.com/craigatk/spock-mock-cheatsheet
