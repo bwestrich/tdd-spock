@@ -22,7 +22,7 @@ class UseClosureToDebugDoubleMatchersTwoArgsSpec extends Specification {
             stubbedDependency.convertString(_, _) >> {inputString, toAppend ->
                 println "inputString: '${inputString}'"
                 println "to append: '${toAppend}'"
-                "converted"
+                return "converted"
             }
         }
 
