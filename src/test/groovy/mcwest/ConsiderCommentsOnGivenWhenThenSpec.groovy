@@ -5,9 +5,8 @@ import spock.lang.Unroll
 
 class ConsiderCommentsOnGivenWhenThenSpec extends Specification {
 
-    /* This test shows that comments can be used after the given/when/then keywords.
-       This can help clarify the intent of more complicated tests, but doesn't need to be
-       used in simpler tests.
+    /* This test shows that comments can be used on the given/when/then blocks.
+       This can help clarify the intent of more complicated tests.
     */
 
     def 'left pad with n zeros: #comment'() {

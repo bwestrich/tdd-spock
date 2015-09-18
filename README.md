@@ -68,9 +68,14 @@ For example, see `mcwest.casestudies.calories.VaCalculateCaloriesFunctionalSpec`
 
 #Write readable where tables
 
-##Use comments and @Unroll to document where tables  
- Add a comment column as the first column to all tables, and print it (via templating) in the method name
+##Always use @Unroll when using where tables  
+ If you don't use @Unroll, all rows of the table are rolled up into a single report result. 
  (e.g. `mcwest.SpecifyClassUnderTestSpec`).
+
+##Optionally use a comment column to document where tables  
+ Consider adding a comment column as the first column to all tables, and printing it (via templating) in the method name
+ (e.g. `mcwest.SpecifyClassUnderTestSpec`).  If you have an input variable that clearly specifies each row, you can 
+ instead use that column (e.g. `mcwest.UseExpectForSimpleSpec`). 
 
 ##Put expected values (outputs) at the end of the where table  
  Put expected values in the rightmost column(s) of the table, as this increases readability
