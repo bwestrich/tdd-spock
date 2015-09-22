@@ -14,19 +14,19 @@ class VcCalculateCaloriesMissingValues2Spec extends Specification {
     @Unroll
     def "calculate calories if no missing input values: #comment"() {
         when:
-        NutrientValue calories = calculateCalories(food)
+            NutrientValue calories = calculateCalories(food)
 
         then:
-        calories.value == cal
+            calories.value == cal
 
         where:
-        comment        | carb | fat  | pro  | alc  || cal
-        'happy path'   | 1    | 2    | 3    | 4    || 62
+            comment        | carb | fat  | pro  | alc  || cal
+            'happy path'   | 1    | 2    | 3    | 4    || 62
 
-        'missing carb' | null | 2    | 3    | 4    || null
-        'missing fat'  | 1    | null | 3    | 4    || null
-        'missing pro'  | 1    | 2    | null | 4    || null
-        'missing alc'  | 1    | 2    | 3    | null || null
+            'missing carb' | null | 2    | 3    | 4    || null
+            'missing fat'  | 1    | null | 3    | 4    || null
+            'missing pro'  | 1    | 2    | null | 4    || null
+            'missing alc'  | 1    | 2    | 3    | null || null
     }
 
 }

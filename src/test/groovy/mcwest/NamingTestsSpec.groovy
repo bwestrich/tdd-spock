@@ -6,13 +6,13 @@ class NamingTestsSpec {
     // good, describes what the class is expected to do
     def 'strings are converted to lower case and trimmed'() {
         given:
-        ClassUnderTest underTest = new ClassUnderTest()
+            ClassUnderTest underTest = new ClassUnderTest()
 
         when:
-        def actualString = underTest.convertString('Hello ')
+            def actualString = underTest.convertString('Hello ')
 
         then:
-        actualString == 'hello'
+            actualString == 'hello'
     }
 
     // bad, imperative style that 'tells' the class what to do

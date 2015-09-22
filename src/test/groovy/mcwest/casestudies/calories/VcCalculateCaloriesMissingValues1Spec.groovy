@@ -9,18 +9,19 @@ import spock.lang.Unroll
  */
 class VcCalculateCaloriesMissingValues1Spec extends Specification {
 
-    @Ignore // TODO: implement calculateCalories method
+    @Ignore
+    // TODO: implement calculateCalories method
     @Unroll
     def "calculate calories: #comment"() {
         when:
-        NutrientValue calories = calculateCalories(food)
+            NutrientValue calories = calculateCalories(food)
 
         then:
-        calories.value == cal
+            calories.value == cal
 
         where:
-        comment      | carb | fat | pro | alc || cal
-        'happy path' | 1    | 2   | 3   | 4   || 62
+            comment      | carb | fat | pro | alc || cal
+            'happy path' | 1    | 2   | 3   | 4   || 62
     }
 
 }

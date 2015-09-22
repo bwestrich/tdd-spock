@@ -1,7 +1,6 @@
 package mcwest
 
 import spock.lang.Specification
-import spock.lang.Unroll
 
 class ConsiderCommentsOnGivenWhenThenSpec extends Specification {
 
@@ -11,14 +10,14 @@ class ConsiderCommentsOnGivenWhenThenSpec extends Specification {
 
     def 'left pad with n zeros: #comment'() {
         given: 'one and two are defined'
-        def one = 1
-        def two = 2
+            def one = 1
+            def two = 2
 
         when: 'add one to one'
-        def actualOutput = one + one
+            def actualOutput = one + one
 
         then: 'get two'
-        actualOutput == two
+            actualOutput == two
     }
 
 }
