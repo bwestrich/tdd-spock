@@ -5,7 +5,7 @@ import spock.lang.Specification
 class UseGivenNotSetupSpec extends Specification {
 
     // bad, uses setup. Less intuitive, block comments read awkwardly.
-    def 'strings are converted to lower case and trimmed, v1'() {
+    def 'converts strings to lower case trimmed, v1'() {
         setup: 'the test has been instantiated'
             ClassUnderTest underTest = new ClassUnderTest()
 
@@ -17,7 +17,7 @@ class UseGivenNotSetupSpec extends Specification {
     }
 
     // good, uses given instead of setup. Block comments read naturally.
-    def 'strings are converted to lower case and trimmed, v2'() {
+    def 'converts strings to lower case trimmed, v2'() {
         given: 'the class has been instantiated'
             ClassUnderTest underTest = new ClassUnderTest()
 

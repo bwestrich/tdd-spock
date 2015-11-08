@@ -12,7 +12,7 @@ class VcCalculateCaloriesMissingValues1Spec extends Specification {
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories: #comment"() {
+    def "calculates calories: #comment"() {
         when:
             NutrientValue calories = calculateCalories(food)
 

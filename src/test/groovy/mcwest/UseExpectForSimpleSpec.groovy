@@ -5,7 +5,7 @@ import spock.lang.Unroll
 
 @Unroll
 class UseExpectForSimpleSpec extends Specification {
-    def "name lengths are correctly reported: #name"() {
+    def "calculates name length: #name"() {
 
         // for simple tests without a given/when/then flow, use expect:
         // typically, tests should instead use given/when/then

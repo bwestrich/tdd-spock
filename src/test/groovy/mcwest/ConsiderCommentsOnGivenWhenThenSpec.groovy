@@ -8,7 +8,7 @@ class ConsiderCommentsOnGivenWhenThenSpec extends Specification {
        This can help clarify the intent of more complicated tests.
     */
 
-    def 'left pad with n zeros: #comment'() {
+    def 'left pads with n zeros: #comment'() {
         given: 'one and two are defined'
             def one = 1
             def two = 2

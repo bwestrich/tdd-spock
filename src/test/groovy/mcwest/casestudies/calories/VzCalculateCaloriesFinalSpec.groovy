@@ -9,7 +9,7 @@ import spock.lang.Unroll
 class VzCalculateCaloriesFinalSpec extends Specification {
 
     @Unroll
-    def "calculate calories, flagging missing ingredient non-alcohol values: #comment"() {
+    def "calculates calories, flagging missing ingredient non-alcohol values: #comment"() {
         given:
             NutrientValue carbVal = new NutrientValue(nutrient: Nutrient.CARB, value: carb, missingValues: carbM)
             NutrientValue fatVal = new NutrientValue(nutrient: Nutrient.FAT, value: fat, missingValues: fatM)

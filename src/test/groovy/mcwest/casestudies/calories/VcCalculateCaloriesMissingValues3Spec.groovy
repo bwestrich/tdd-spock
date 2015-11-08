@@ -13,7 +13,7 @@ class VcCalculateCaloriesMissingValues3Spec extends Specification {
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories if not missing carb, fat, or protein: #comment"() {
+    def "calculates calories if not missing carb, fat, or protein: #comment"() {
         when:
             NutrientValue calories = calculateCalories(food)
 

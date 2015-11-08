@@ -7,7 +7,7 @@ class SmallerWhereSpec extends Specification {
 
     // bad, large where clause is hard to manage
     @Unroll
-    def 'sizes can be compared and added: #comment'() {
+    def 'compares and adds sizes: #comment'() {
         given:
             ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -37,7 +37,7 @@ class SmallerWhereSpec extends Specification {
 
     // better (part 1 of 2)
     @Unroll
-    def 'size can be compared for different types of collections: #comment'() {
+    def 'compares sizes for different types of collections: #comment'() {
         given:
             ClassUnderTest classUnderTest = new ClassUnderTest()
 
@@ -63,7 +63,7 @@ class SmallerWhereSpec extends Specification {
 
     // better (part 2 of 2)
     @Unroll
-    def 'sizes are added, using zero for nulls: #comment'() {
+    def 'adds sizes, using zero for nulls: #comment'() {
         given:
             ClassUnderTest classUnderTest = new ClassUnderTest()
 

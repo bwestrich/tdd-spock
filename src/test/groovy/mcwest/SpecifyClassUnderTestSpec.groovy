@@ -9,7 +9,7 @@ class SpecifyClassUnderTestSpec extends Specification {
     Note that most of the test cases are edge-cases. */
 
     @Unroll
-    def 'left pad with n zeros: #comment'() {
+    def 'left pads with n zeros: #comment'() {
         when:
             def actualOutput = padLeftWithNZeros(inputString, 5)
 

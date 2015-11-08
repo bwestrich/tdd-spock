@@ -13,7 +13,7 @@ class VeCalculateCaloriesIngMissingValues1Spec extends Specification {
     @Ignore
     // TODO: implement calculateCalories method
     @Unroll
-    def "calculate calories, flagging missing ingredient values: #comment"() {
+    def "calculates calories, flagging missing ingredient values: #comment"() {
         when:
             NutrientValue calories = calculateCalories(food)
 

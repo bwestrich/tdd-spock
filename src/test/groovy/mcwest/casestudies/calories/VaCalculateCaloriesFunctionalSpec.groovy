@@ -13,7 +13,7 @@ class VaCalculateCaloriesFunctionalSpec extends Specification {
     @SuppressWarnings("GrEqualsBetweenInconvertibleTypes")
     @Ignore
     // TODO: implement calculateCalories method
-    def "calculate calories: #comment"() {
+    def "calculates calories: #comment"() {
         given:
             def carbValue = 1
             def fatValue = 2

@@ -19,7 +19,7 @@ class StubsAndMocksSpec extends Specification {
                 logService: this.logServiceMock)
     }
 
-    def 'data transformations are logged'() {
+    def 'logs data transformations'() {
         given:
             // stubs are only used to supporting the test,
             // their use is not verified
@@ -35,7 +35,7 @@ class StubsAndMocksSpec extends Specification {
 
     // the code in this method doesn't illustrate anything not already illustrated
     // in previous method, but the comments show more examples of using stubs.
-    def 'data is correctly transformed'() {
+    def 'transforms data'() {
         given:
             // DataService is a stub, as calls to it do not need to be verified
             // in order to test that the data is correctly transformed.

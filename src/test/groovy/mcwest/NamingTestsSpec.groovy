@@ -4,7 +4,7 @@ package mcwest
 class NamingTestsSpec {
 
     // good, describes what the class is expected to do
-    def 'strings are converted to lower case and trimmed'() {
+    def 'converts strings to lower case trimmed'() {
         given:
             ClassUnderTest underTest = new ClassUnderTest()
 
