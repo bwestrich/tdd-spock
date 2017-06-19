@@ -133,6 +133,10 @@ For more info on this approach, see README-MOCKMVC.md.
     not this:    | new BigDecimal(5) |     
 * TODO: use @Shared variables to centralize initialization of variables that are used in where tables.
 * TODO: use thrown/notThrown to verify exception behavior.
+* TODO: show example of using arguments passed into mocked methods via a closure, e.g. 
+          service.getThingFromNumber(_) >> { arguments ->
+              new Thing(number: arguments[0])
+          }
 
 #References
 

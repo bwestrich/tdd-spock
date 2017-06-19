@@ -4,13 +4,15 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 /*
-This class shows how to use a closure to debug double method matching.
-The closure prints out the argument values being passed to the double,
+This class shows how to use a closure to debug mock method matching.
+The closure prints out the argument values being passed to the mock,
 which you can then compare to the expected values.
 This technique was first suggested to me by my colleague Dave Hoffman.
+
+In this context, we use the term 'mock' to refer to any test double, including a mock or a stub).
  */
 
-class UseClosureToDebugDoubleMatchersSpec extends Specification {
+class UseClosureToDebugMethodMatchersSpec extends Specification {
 
     @Unroll
     def 'closures can be used to debug doubles whose parameter values do not match actual calls'() {

@@ -3,7 +3,7 @@ package mcwest.learnspock
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class UseClosureToDebugDoubleMatchersTwoArgsSpec extends Specification {
+class UseClosureToDebugMethodMatchersTwoArgsSpec extends Specification {
 
     @Unroll
     def 'closures can be used to debug doubles whose parameter values do not match actual calls'() {
