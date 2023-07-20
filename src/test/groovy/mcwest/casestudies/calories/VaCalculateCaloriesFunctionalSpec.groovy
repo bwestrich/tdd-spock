@@ -6,13 +6,11 @@ import spock.lang.Specification
 
 /**
  * Calorie calculation algorithm.
- * nb: this and all other specs in this project compile and do not fail.
  */
 class VaCalculateCaloriesFunctionalSpec extends Specification {
 
     @SuppressWarnings("GrEqualsBetweenInconvertibleTypes")
     @Ignore
-    // TODO: implement calculateCalories method
     def "calculates calories: #comment"() {
         given:
             def carbValue = 1
@@ -23,6 +21,7 @@ class VaCalculateCaloriesFunctionalSpec extends Specification {
                     protein: proteinValue, alcohol: alcoholValue)
 
         when:
+            // note: calculateCalories method is not implemented until VzCalculateCaloriesFinal
             NutrientValue calories = calculateCalories(food)
 
         then:
