@@ -1,16 +1,10 @@
 #tdd-spock -- Test Driven Design/Development Guidelines (with Spock examples)  
 
-*"If you want to refactor, the essential precondition is having solid tests.”* 
-
- -- Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
+*"If you want to refactor, the essential precondition is having solid tests.”*  -- Martin Fowler (from ‘Refactoring: Improving the Design of Existing Code’, Addison-Wesley, 1999)
 
 The below guidelines (and their related code examples) can help you effectively use 
 Spock to create tests that are an "Asset not an Afterthought". 
-Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`).
-For info on using TDD with JUnit, including code examples 
-and a Java/IntelliJ/Eclipse TDD cribsheet, 
-see [here](https://bitbucket.org/bwestrich/java-tdd/wiki/Home).
-
+Each code example mentioned below is prefaced with the package name (e.g. `mcwest....`). For more info, see the companion presentation at https://www.infoq.com/presentations/groovy-spock  
 
 #Test the right thing
 * Only test functionality that the class under test provides to its consumers.
